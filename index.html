@@ -317,11 +317,17 @@ console.log(meuCarro.parar());</code>
 						<pre class="fragment">
 							<code>function Carro(){}
 
-var meuCarro = new Carro();
-
 Carro.prototype.andar = function(){
     return true;
-}</code>
+}
+
+Carro.prototype.parar = function(){
+    return true;
+}
+
+var meuCarro = new Carro();
+
+console.log(meuCarro.parar())</code>
 						</pre>
 					</section>
 
