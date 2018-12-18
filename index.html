@@ -92,19 +92,20 @@
 
 					<section>
 						O que é <span class="highlight">Escopo</span>?
-						<p class="fragment"><i>O escopo de uma variável é a região <br>do código onde ela é definida.</i></p>
+						<p class="fragment"><i>O escopo se refere a visibilidade das variáveis. Em outras palavras, quais partes do programa podem ver e usar essas variáveis.</p>
 					</section>
 
 					<section>
-						<p>Uma variável <span class="highlight">global</span> tem escopo <span class="highlight">global</span> e está definida em toda a parte do código.</p>
+						<p>Uma variável <span class="highlight">global</span> tem escopo <span class="highlight">global</span> e pode ser acessada em toda a parte do programa.</p>
 					</section>
 
 					<section>
-						<p>Por outro lado, variáveis declaradas dentro <br> de uma <span class="highlight">função</span> estão definidas apenas dentro do corpo da função. Elas são <span class="highlight">variáveis locais</span><br> e têm seu <span class="highlight">escopo local</span>.</p>
+						<p>Por outro lado é útil limitar o acesso de algumas variáveis ao escopo de uma função (ou bloco de execução), assim você garante que o resultado não será afetado por uma redefinição, por exemplo.</p>
+						<p>Variáveis declaradas dentro de um escopo são chamadas de <span class="highlight">variáveis locais</span>.</p>
 					</section>
 
 					<section>
-						<p>Os <span class="highlight">parâmetros das funções</span> também contam <br>como variáveis locais e estão definidas<br> apenas dentro da função.</p>
+						<p><span class="highlight">Parâmetros de funções</span> são variáveis locais de escopo limitado.</p>
 					</section>
 
 					<section>
@@ -141,19 +142,19 @@ console.log(myscope); // => 'local'
 					</section>
 
 					<section>
-						<p>Cada função tem seu próprio escopo, <br> portanto é possível ter várias camadas <br>de escopo local aninhadas:</p>
+						<p>Cada função define um escopo, <br> portanto é possível ter várias camadas <br>de escopo local aninhadas:</p>
 						<pre class="fragment">
-							<code>var scope = 'global scope';
+							<code>var scope = 'global Fred';
 function checkScope() {
-    var scope = 'local scope';
+    var scope = 'local John';
     function nested() {
-        var scope = 'nested scope';
+        var scope = 'nested Paul';
         return scope;
     }
     return nested();
 }
 
-console.log(checkScope()); // => A saída será "nested scope"
+console.log(checkScope()); // => A saída será "nested Paul"
 							</code>
 						</pre>
 					</section>
@@ -297,7 +298,7 @@ for (var x in a) {
 
 					<section>
 						<p><span class="highlight">break</span></p>
-                        <p class="fragment"><i>interrompe a execução</i></p>
+                        <p class="fragment"><i>interrompe a execução de um loop</i></p>
 						<pre class="fragment">
 							<code>var a = ['a', 'b', 'c'];
 
@@ -315,7 +316,7 @@ for(var x in a) {
 
 					<section>
 						<p><span class="highlight">continue</span></p>
-                        <p class="fragment"><i>salta a execução</i></p>
+                        <p class="fragment"><i>salta a execução para o próximo item do loop</i></p>
 						<pre class="fragment">
 							<code>for(var x in a) {
     if (x == 1) {
@@ -373,7 +374,8 @@ else {
                     </section>
 
                     <section>
-                        <p><span class="highlight">switch</span></p>
+						<p><span class="highlight">switch</span></p>
+						<p class="fragment">Alinhando um monte de if.</p>
                         <pre class="fragment">
                             <code>switch(a) {
     case 1:
@@ -394,11 +396,11 @@ else {
                         <pre class="fragment">
                             <code>var resp = JSON.parse('"erro');</code>
                         </pre>
-                        <p class="fragment">JSON.parse poderia retonar null ou false ao falhar. Mas o que difere de JSON.parse("null").</p>
+                        <p class="fragment">JSON.parse poderia retonar null ou false ao falhar. Mas o que difere de JSON.parse("null")?</p>
                     </section>
 
                     <section>
-                        <p>Exceções são erros que tendem a ser mais claros, no exemplo acima poderia informar a falta de <br>uma aspas e que podem navegar por <br>camadas até encontrar <span class="highlight">try catch</span>.</p>
+                        <p>Exceções são erros mais claros (ou deveriam), no exemplo acima poderia informar a falta de <br>uma aspas e que podem navegar por <br>camadas até encontrar <span class="highlight">try catch</span>.</p>
                     </section>
 
                     <section>
@@ -415,7 +417,7 @@ else {
 
                     <section>
                         <p><span class="highlight">throw</span></p>
-                        <p class="fragment"><i>Cria exceções.</i></p>
+                        <p class="fragment"><i>Criando exceções!</i></p>
                         <pre class="fragment">
                             <code>if(a > 1) {
     throw 'A não pode ser maior que 1';
@@ -428,7 +430,7 @@ throw new Error('mensagem');
 
                     <section>
                         <p><span class="highlight">var</span></p>
-                        <p class="fragment">Variáveis globais, locais e constantes.</p>
+                        <p class="fragment">Para declarações de variáveis.</p>
                     </section>
 
                     <section>
