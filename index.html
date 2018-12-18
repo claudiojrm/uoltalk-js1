@@ -1047,10 +1047,12 @@ if($('.elemento').hasClass('red')) {
                         <p>Já pensou em reutilizar e otimizar?</p>
                         <pre class="fragment">
                             <code>var elemento = $('.elemento');
-elemento.addClass('red');
+var cor = 'red';
 
-if(elemento.hasClass('red')) {
-    elemento.removeClass('red');
+elemento.addClass(cor);
+
+if(elemento.hasClass(cor)) {
+    elemento.removeClass(cor);
 }</code>
                         </pre>
                     </section>
@@ -1097,7 +1099,7 @@ elemento.addClass(classe);
                     </section>
 
                     <section>
-                        <p>Você gostaria de ver uma situação dessas:</p>
+                        <p>Você gostaria de ver uma situação dessas?</p>
                         <pre class="fragment">
                             <code>var x = 1; 
 if(x) {
