@@ -720,8 +720,116 @@ getName(hello);
 					<section>
 						<p>Os estados mais utilizados são: <br><span class="highlight">Resolvida</span> e <span class="highlight">Rejeitada</span>.</p>
 					</section>
-				</section>
 
+					<section>
+						<p>Ao criar uma Promise, seu estado <br>inicial é <span class="highlight">pending</span>. </p>
+					</section>
+
+					<section>
+						<p>Se a mesma chegar ao estado <span class="highlight">resolved</span> é porque tudo deu certo, ou seja, a Promise foi criada, processada com sucesso.</p>
+					</section>
+
+					<section>
+						<p>Porém, em caso de falhas ela  <br>entrará no modo <span class="highlight">rejected</span>.</p>
+					</section>
+
+					<section>
+						<p>Uma das maneiras de fazer os <br>tratamentos de sucesso e falha é  <br>através dos métodos <span class="highlight">then</span> e <span class="highlight">catch</span>.</p>
+					</section>
+
+					<section>
+						<p>Porque utilizar Promises?</p>
+					</section>
+
+					<section>
+						<p>Quando utilizamos <span class="highlight">funções assíncronas</span>, <br>não conseguimos garantir o fluxo do nosso código, ou seja, um trecho de código que está localizado <span class="highlight">após</span> uma função assíncrona pode ser executado <span class="highlight">antes</span> da mesma ser realizada.</p>
+					</section>
+
+					<section>
+						<pre>
+							<code>function getConfig() {
+    var cf;
+    this.json.open('foo/bar/config.json')
+        .then(function(result) {
+        	cf = result;
+        }).catch(function(err) {
+        	console.log('Ops!', err);
+        });
+
+    return cf;
+}
+
+var config;
+
+console.log("Abrindo o arquivo de configuração...");
+
+config = getConfig();
+
+console.log("Pronto!");
+console.log(config);
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>Esse código será executado assim <br>que nossa aplicação iniciar. A ordem de <br>execução será a seguinte:</p>
+						<ul class="highlight">
+							<li class="fragment">Abrindo o arquivo de configuração...</li>
+							<li class="fragment">Pronto!</li>
+							<li class="fragment">undefined</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>O config foi impresso como <span class="highlight">undefined</span>, pois foi avaliado antes mesmo do arquivo<br> ser aberto pela <span class="highlight">json.open</span>.</p>
+					</section>
+
+					<section>
+						<p>Podemos resolver este problema assim:</p>
+						<pre class="fragment">
+							<code>function getConfig() {
+    return this.json.open('foo/bar/config.json');
+}
+
+var config;
+console.log("Abrindo o arquivo de configuração...");
+
+getConfig().then(function(config) {
+    console.log("Pronto!");
+    console.log(config);
+}).catch(function(e) {
+    console.log(e);
+});
+</code>
+						</pre>
+					</section>
+
+                    <section>
+                        <p>Faremos uma função que simula uma requisição, assim como nossa tool de json.</p>
+                        <pre class="fragment">
+                            <code>function efetuaBusca() {
+
+}
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>Agora podemos começar a criação de nossa Promise. Se Promise é um objeto e objetos em javascript podem ser criados ou instânciados através da palavra reservada <span class="highlight">new</span>, faremos o mesmo com nossa Promise.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>function efetuaBusca() {
+    new Promise();
+}
+
+efetuaBusca(); // => "TypeError: Promise resolver is not a function"
+</code>
+                        </pre>
+                        <p class="fragment">Porém, isso não será o suficiente para que funcione. O código acima resultará em <br><span class="highlight">TypeError: Promise resolver is not a function</span>.</p>
+                    </section>
+				</section>
 
 				<section>
 					Reutilização de código
