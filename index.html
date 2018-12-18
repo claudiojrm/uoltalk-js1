@@ -654,15 +654,17 @@ console.log("O tamanho da subclasse meu é: "+meu.length);
 					
 					<section>
 						O que é <span class="highlight">Função</span>?
+						<p class="fragment">As funções tornam nosso código limpo e fácil de ler e nos evitam reescrever o mesmo código várias vezes.</p>
 						<p class="fragment"><i>É um objeto que contém um código executável, isolado, não sendo possível acessá-lo externamente.</i></p>
+						<p class="fragment"><i>Existem as funções externas (padrão e definidas por terceiros) e as funções que você define.</i></p>
 					</section>
 					
 					<section>
-						<p>Para se declarar uma função <br> existem algumas formas.</p>
+						<p>Existem algumas formas de definir suas funções.</p>
 					</section>
 
 					<section>
-						<p class="highlight">Function Declaration</p>
+						<p class="highlight">Declaração de função</p>
 						<pre class="fragment">
 							<code>soma(2, 2); // retorna 4
 								
@@ -671,11 +673,11 @@ function soma(a, b) {
 }
 							</code>
 						</pre>
-						<p class="fragment">A função é carregada antes do <br>código ser interpretado.</p>
+						<p class="fragment">A função é carregada antes do <br>código ser executado.</p>
 					</section>
 					
 					<section>
-						<p class="highlight">Function Expression</p>
+						<p class="highlight">Função anônima, atribuída a uma variável</p>
 						<pre class="fragment">
 							<code>var soma = function(a, b) {
 	return a + b;
@@ -684,7 +686,24 @@ function soma(a, b) {
 soma(2, 2); // retorna 4
 							</code>
 						</pre>
-						<p class="fragment">A função é carregada durante <br>a interpretação do código.</p>
+						<p class="fragment">A função é carregada durante <br>a execução do código.</p>
+					</section>
+
+					<section>
+						<p class="highlight">Parametros, domínio e imagem</p>
+						<p class="fragment">Para sua função agir dinamicamente, retornar 1 e 2 ela deve receber parâmetros e por meio desses parâmetros (domínio) retornar valores (imagem).</p>
+						<p class="fragment">Funções na programação tem sua origem na matemática. Raiz quadrada é uma função, exponêncial é outra.</p>
+					</section>
+
+					<section>
+						<p class="highlight">Programação funcional</p>
+						<p class="fragment">Nada mais é do que programar usando funções sem guardar estados.</p>
+						<p class="fragment">Importante! Para sua função ser autocontida ela não pode depender de estados além de parâmetros.</p>
+						<code>var a = 1;
+function notSelfContained(value) {
+	return a * value;
+}
+						</code>
 					</section>
 					
 				</section>
