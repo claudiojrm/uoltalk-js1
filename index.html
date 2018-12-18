@@ -124,13 +124,13 @@ function checkScope() {
     return scope;
 }
 
-console.log(checkScope()) // => a saída será "local"
+console.log(checkScope()); // => a saída será "local"
 							</code>
 						</pre>
 					</section>
 
 					<section>
-						<p>Embora seja possível a não utilização da <br>instrução <span class="highlight">var</span>, <span class="highlight">let</span> ou <span class="highlight">const</span> no escopo global, <br>deve ser sempre utilizado para declaração <br>em escopo local. Considere o seguinte:</p>
+						<p>Embora seja possível a não utilização da <br>instrução <span class="highlight">var</span> no escopo global, ela  <br>deve ser sempre utilizada para declaração <br>em escopo local. Considere o seguinte:</p>
 						<pre class="fragment">
 							<code>scope = 'global';
 
@@ -202,7 +202,7 @@ test({str: 'fagneranabalada'});</code>
 						<pre class="fragment">
 							<code>var scope = 'global';
 function test() {
-    console.log(scope) // => A saida será "undefined" e não "global" ou "ReferenceError"
+    console.log(scope); // => A saida será "undefined" e não "global" ou "ReferenceError"
     var scope = 'local'; // variavel inicializada aqui, mas visivel para todo o corpo
     console.log(scope); // => A saida será "local"
 }
@@ -215,7 +215,7 @@ test();</code>
 						<pre class="fragment">
 							<code>function test() {
     var scope;
-    console.log(scope) // => A saida será "undefined" e não "global" ou "ReferenceError"
+    console.log(scope); // => A saida será "undefined" e não "global" ou "ReferenceError"
     var scope = 'local'; // variavel inicializada aqui, mas visivel para todo o corpo
     console.log(scope); // => A saida será "local"
 }
@@ -1093,7 +1093,7 @@ elemento.addClass(classe);
                     </section>
 
                     <section>
-                        <p>A facilidade em dar manutenção também é importante. Todos têm que conseguir mexer no seu código da maneira mais rápida e otimizada possível, sem precisar fazer gambiarras!</p>
+                        <p>A facilidade em dar manutenção também é importante. Todos têm que conseguir mexer no seu código da maneira mais rápida e otimizada possível, sem precisar fazer gambiarras.</p>
                     </section>
 
                     <section>
