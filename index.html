@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>UOLTalk</title>
+		<title>UOLTalk - Javascript (Módulo I)</title>
 		<link rel="shortcut icon" href="https://hp.imguol.com.br/c/home/layout/camaleao/web/gerais/favicon.ico">
 
 		<link rel="stylesheet" href="css/reveal.css">
@@ -55,14 +55,14 @@
 					<section>
 						<p>O que abordaremos?</p>
 						<ul class="highlight">
+                            <li class="fragment">Escopo</li>
+                            <li class="fragment">Statements</li>
+                            <li class="fragment">Protótipo</li>
+                            <li class="fragment">Funções</li>
+                            <li class="fragment">Instâncias</li>
+                            <li class="fragment">Ajax</li>
+                            <li class="fragment">Promise</li>
 							<li class="fragment">Tipos</li>
-							<li class="fragment">Escopo</li>
-							<li class="fragment">Statements</li>
-							<li class="fragment">Protótipo</li>
-							<li class="fragment">Funções</li>
-							<li class="fragment">Instâncias</li>
-							<li class="fragment">Ajax</li>
-							<li class="fragment">Promise</li>
 							<li class="fragment">Boas práticas</li>
 						</ul>
 					</section>
@@ -71,16 +71,6 @@
 				<section>
 					"A linguagem javascript é a única que as pessoas <span class="highlight">acham que não precisam aprender</span> antes de começar a utilizar." <i>- Douglas Crockford</i>
 				</section>
-
-				<section>
-					<section>
-						<b class="highlight">Tipos</b>
-                    </section>
-                    <section>
-                        <p>Os tipos de JavaScript podem ser divididos em tipos primitivos e tipos de objetos.</p>
-                    </section>
-
-                </section>
 
                 <section>
                     <section>
@@ -1180,7 +1170,7 @@ efetuaBusca().then(function(resultado) {
                     <section>
                         <p>Assim como fizemos para resolver a <br>nossa Promise, também podemos <br>rejeitar utilizando <span class="highlight">reject</span>.</p>
                     </section>
-
+                    
                     <section>
                         <pre>
                             <code>function efetuaBusca(foo) {
@@ -1204,6 +1194,92 @@ efetuaBusca(true)
     });
 </code>
                         </pre>
+                    </section>
+
+                    <section>
+                        <b class="highlight">É isso, próximo!</b>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <b class="highlight">Tipos</b>
+                    </section>
+                    <section>
+                        <p>Os tipos de JavaScript podem ser divididos em <span class="highlight">tipos primitivos</span> e <span class="highlight">tipos de objetos</span>.</p>
+                    </section>
+                    <section>
+                        <p>E podem ser divididos em <br><span class="highlight">tipos com métodos</span> e <span class="highlight">tipos sem métodos</span>.</p>
+                    </section>
+                    <section>
+                        <p>Também podem ser classificados como <br><span class="highlight">tipos mutáveis</span> e <span class="highlight">imutáveis</span>.</p>
+                    </section>
+                    <section>
+                        <p>Um valor do tipo <span class="highlight">mutável <br> pode mudar</span>.</p>
+                    </section>
+                    <section>
+                        <p><span class="highlight">Objetos</span> e <span class="highlight">arrays</span> são <span class="highlight">mutáveis</span>.</p>
+                        <p class="fragment">JavaScript pode mudar os valores de propriedades do objeto e de elementos de arrays.</p>
+                    </section>
+                    <section>
+                        <p><span class="highlight">Números</span>, <span class="highlight">booleanos</span>, <span class="highlight">null</span> e <span class="highlight">undefined</span> <br> são <span class="highlight">imutáveis</span>. </p>
+                    </section>
+                    <section>
+                        <p>As <span class="highlight">strings</span> podem ser consideradas arrays de caractéres, sendo que se poderia <br>esperar que fossem mutáveis.</p>
+                    </section>
+
+                    <section>
+                        <p>No entanto, em JavaScript as <span class="highlight">strings são imutáveis</span>.</p>
+                    </section>
+
+                    <section>
+                        <p>Você pode acessar o texto de determinado índice de uma string, mas JavaScript não fornece uma maneira de alterar o texto de uma string existente.</p>
+                    </section>
+
+                    <section>
+                        <p>Se você usa um valor não booleano onde é esperado um booleano, JavaScript <br> converte adequadamente.</p>
+                    </section>
+
+                    <section>
+                        <p>As regras de conversão de valores literais de JavaScript afetam sua definição de igualdade, sendo que o operador de igualdade == <br>realiza a conversões de tipo. </p>
+                    </section>
+
+                    <section>
+                        <p>ou seja...</p>
+                        <pre class="fragment">
+                            <code>console.log(1 == '1'); // => true
+console.log(1 === '1'); // => false</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>Tipos Primitivos</p>
+                        <ul class="fragment highlight">
+                            <li>String</li>
+                            <li class="fragment">Number</li>
+                            <li class="fragment">Boolean</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Tipos Compostos</p>
+                        <ul class="fragment highlight">
+                            <li>Object</li>
+                            <li class="fragment">Array</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Valores especiais <span class="highlight">null</span> e <span class="highlight">undefined</span> são valores primitivos, porém são membros <br>de seu próprio tipo especial.</p>
+                    </section>
+
+                    <section>
+                        <p>Qualquer valor em javascript que não seja string, booleano, null ou undefined é um objeto.</p>
+                    </section>
+
+                    <section>
+                        <p>Javascript define um tipo especial de objeto conhecido como função. A função é um objeto que tem um código executável associado.</p>
                     </section>
 
                     <section>
