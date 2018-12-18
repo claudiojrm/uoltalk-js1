@@ -62,7 +62,6 @@
 							<li class="fragment">Instâncias</li>
 							<li class="fragment">Ajax</li>
 							<li class="fragment">Promise</li>
-							<li class="fragment">Reutilização de código</li>
 							<li class="fragment">Boas práticas</li>
 						</ul>
 					</section>
@@ -1003,11 +1002,132 @@ efetuaBusca(true)
                 </section>
 
 				<section>
-					Reutilização de código
-				</section>
+				    
+                    <section>
+                        <b class="highlight">Boas práticas</b>
+                        <p class="fragment"><i>Você já parou pra pensar <br>que "o seu" código não é seu?</i></p>
+                    </section>
 
-				<section>
-					Boas práticas
+                    <section>
+                        <p>Pense no seguinte código:</p>
+                        <pre class="fragment">
+                            <code>function Carro(modelo, marca, ano) {
+    this.modelo = modelo;
+this.ano = ano;
+        this.marca = marca;
+}
+
+var belina = new Carro('Belina')
+var celta = new Carro('Celta');
+var fusca = new Carro("Fusca")
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>Pode parecer besteira, mas a falta de padrão, faz você mesmo ficar em dúvida de como desenvolver.</p>
+                    </section>
+
+                    <section>
+                        <p>Verifique se o projeto que você está mexendo já não tem algo definido como padrão.</p>
+                    </section>
+                    
+                    <section>
+                        <p>Vai utilizar o mesmo código várias vezes?</p>
+                        <pre class="fragment">
+                            <code>$('.elemento').addClass('red');
+
+if($('.elemento').hasClass('red')) {
+    $('.elemento').removeClass('red');
+}</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>Já pensou em reutilizar e otimizar?</p>
+                        <pre class="fragment">
+                            <code>var elemento = $('.elemento');
+elemento.addClass('red');
+
+if(elemento.hasClass('red')) {
+    elemento.removeClass('red');
+}</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>e assim?</p>
+                        <pre class="fragment">
+                            <code>if($('.elemento').hasClass('red')) {
+    $('.elemento').addClass('blue green');
+} else if($('.elemento').hasClass('red1')) {
+    $('.elemento').addClass('grey tomato');
+} else if($('.elemento').hasClass('red2')) {
+    $('.elemento').addClass('pink');
+} else {
+    $('.elemento').addClass('dark');    
+}
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>poderia ser algo assim...</p>
+                        <pre class="fragment">
+                            <code>var elemento = $('.elemento');
+var classe;
+
+if(elemento.hasClass('red')) {
+    classe = 'blue green';
+} else if(elemento.hasClass('red1')) {
+    classe = 'grey tomato';
+} else if(elemento.hasClass('red2')) {
+    classe = 'pink';
+} else {
+    classe = 'dark';
+}
+
+elemento.addClass(classe);
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>A facilidade em dar manutenção também é importante. Todos têm que conseguir mexer no seu código da maneira mais rápida e otimizada possível, sem precisar fazer gambiarras!</p>
+                    </section>
+
+                    <section>
+                        <p>Você gostaria de ver uma situação dessas:</p>
+                        <pre class="fragment">
+                            <code>var x = 1; 
+if(x) {
+    x = 2;
+    if(x) {
+        x = 2;
+        if(x) {
+            x = 3;
+            if(x) {
+                x = 4;
+            }
+        } else {
+            x = 0;
+        }
+    } else {
+        x = 0;
+    }
+}
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>Se é difícil de ler, é difícil de dar manutenção.</p>
+                        <p class="fragment highlight"><i>Não se apegue ao seu código!</i></p>
+                    </section>
+
+                    <section>
+                        <b class="highlight">É isso, próximo!</b>
+                    </section>
 				</section>
 
 				<section>
