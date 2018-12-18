@@ -69,7 +69,7 @@
 				</section>
 	
 				<section>
-					"A linguagem javascript é a única que as pessoas <span class="highlight">acham que não precisam aprender</span> antes de começar a utilizar." <i>Douglas Crockford</i>
+					"A linguagem javascript é a única que as pessoas <span class="highlight">acham que não precisam aprender</span> antes de começar a utilizar." <i>- Douglas Crockford</i>
 				</section>
 
 				<section>
@@ -491,7 +491,66 @@ soma(2, 2); // retorna 4
 				</section>
 				
 				<section>
-					Instâncias
+					<section>
+                        <b class="highlight">Instância</b>
+                    </section>
+
+                    <section>
+                        <p>O que abordaremos?</p>
+                        <ul class="highlight">
+                            <li class="fragment">O que é Instância?</li>
+                            <li class="fragment">Conjunto de atributos</li>
+                            <li class="fragment">Concretização de uma classe</li>
+                            <li class="fragment">Exemplo prático</li>
+                        </ul>
+                    </section>
+    
+                    <section>
+                        O que é <span class="highlight">Instância</span>?
+                        <p class="fragment"><i>Em programação orientada a objetos, instância é um objeto que tem o seu estado e comportamento definido pela classe.</i></p>
+                    </section>
+
+                    <section>
+                        <p>As instâncias de uma classe compartilham o mesmo <span class="highlight">conjunto de atributos</span>, embora sejam diferentes quanto ao <span class="highlight">conteúdo desses atributos</span>.</p>
+                    </section>
+    
+                    <section>
+                        <p>Por exemplo, a classe <span class="highlight">TitleController</span> <br> descreve os atributos comuns a todas as <br> instâncias da própria classe.</p>
+                    </section>
+
+                    <section>
+                        <p>Os objetos dessa classe podem ser semelhantes, mas variam em atributos. </p>
+                    </section>
+
+                    <section>
+                        <p>A descrição da classe contém os itens correspondentes a esses atributos e define as operações ou ações relevantes para a classe.</p>
+                    </section>
+
+                    <section>
+                        <p><i class="highlight">Instância é a concretização de uma classe.</i></p>
+                        <p class="fragment">Em programação orientada a objetos, a palavra <span class="highlight">instanciar</span> significa criar. Quando falamos em instanciar um objeto, criamos fisicamente uma representação concreta da classe.</p>
+                    </section>
+                    
+                    <section>
+                        <p>Pense no seguinte cenário:</p>
+                        <pre class="fragment">
+                            <code>function Carro(modelo) {
+    this.modelo = modelo;
+}
+
+var belina = new Carro('Belina');
+var fusca = new Carro('Fusca');
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p><span class="highlight">Carro</span> é uma classe ou um molde, <br><span class="highlight">Belina</span> é uma instância de Carro e apesar de carregar todas as características de Carro, é completamente independente de <br>outras instâncias de Carro.</p>
+                    </section>
+                    
+                    <section>
+                        <b class="highlight">É isso, próximo!</b>
+                    </section>
 				</section>
 				
 				<section>
@@ -936,6 +995,10 @@ efetuaBusca(true)
     });
 </code>
                         </pre>
+                    </section>
+
+                    <section>
+                        <b class="highlight">É isso, próximo!</b>
                     </section>
                 </section>
 
