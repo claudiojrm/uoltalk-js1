@@ -1,0 +1,733 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style>
+			.highlight{color:#e7ad52!important;}
+			pre, code { font-size: 17px!important; }
+		</style>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h2 class="highlight">UOLTalk</h2>
+					</section>
+					<section>
+						<p>O que é o <span class="highlight">UOLTalk</span>?</p>
+					</section>
+					<section>
+						<p>São reuniões periódicas, apresentando conteúdos relevantes para o nosso dia a dia.</p>
+					</section>
+					<section>
+						<p>Os objetivos do <span class="highlight">UOLTalk</span> são:</p>
+						<ul>
+							<li class="fragment">compartilhar conhecimento</li>
+							<li class="fragment">evoluir equipe</li>
+							<li class="fragment">padronizar</li>
+						</ul>
+					</section>					
+				</section>
+				
+				<section>
+					<section>						
+						<b class="highlight">UOLTalk Javascript</b> <br> (Módulo I)
+					</section>
+					<section>
+						<p>O que abordaremos?</p>
+						<ul class="highlight">
+							<li class="fragment">Tipos</li>
+							<li class="fragment">Escopo</li>
+							<li class="fragment">Statements</li>
+							<li class="fragment">Protótipo</li>
+							<li class="fragment">Funções</li>
+							<li class="fragment">Instâncias</li>
+							<li class="fragment">Promise</li>
+							<li class="fragment">Ajax</li>
+							<li class="fragment">Reutilização de código</li>
+							<li class="fragment">Boas práticas</li>
+						</ul>
+					</section>
+				</section>
+	
+				<section>
+					"A linguagem javascript é a única que as pessoas <span class="highlight">acham que não precisam aprender</span> antes de começar a utilizar." <i>Douglas Crockford</i>
+				</section>
+
+				<section>
+					<section>Tipos</section>
+					<section>
+						<div class="highlight">String</div>
+					</section>
+					<section>Number</section>
+					<section>Number</section>
+				</section>
+
+				<section>
+					<section>
+						<b class="highlight">Escopo</b>
+					</section>
+
+					<section>
+						<p>O que abordaremos?</p>
+						<ul class="highlight">
+							<li class="fragment">O que é escopo?</li>
+							<li class="fragment">Escopo global</li>
+							<li class="fragment">Escopo local</li>
+							<li class="fragment">Escopo de função</li>
+							<li class="fragment">Escopo dos parâmetros de função</li>
+							<li class="fragment">Precedência de variáveis</li>
+							<li class="fragment">Içamento (Hoisting)</li>
+						</ul>
+					</section>
+					<section>
+						O que é <span class="highlight">Escopo</span>?
+						<p class="fragment"><i>O escopo de uma variável é a região <br>do código onde ela é definida.</i></p>
+					</section>
+
+					<section>
+						<p>Uma variável <span class="highlight">global</span> tem escopo <span class="highlight">global</span> e está definida em toda a parte do código.</p>
+					</section>
+
+					<section>
+						<p>Por outro lado, variáveis declaradas dentro <br> de uma <span class="highlight">função</span> estão definidas apenas dentro do corpo da função. Elas são <span class="highlight">variáveis locais</span><br> e têm seu <span class="highlight">escopo local</span>.</p>
+					</section>
+
+					<section>
+						<p>Os <span class="highlight">parâmetros das funções</span> também contam <br>como variáveis locais e estão definidas<br> apenas dentro da função.</p>
+					</section>
+
+					<section>
+						<p>Uma variável local tem precedência sobre uma variável global com o mesmo nome, ou seja, a variável global é ocultada pela variável local.</p>
+						<pre class="fragment">
+							<code>var scope = 'global';
+
+function checkScope() {
+    var scope = 'local';
+    return scope;
+}
+
+console.log(checkScope()) // => a saída será "local"
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>Embora seja possível a não utilização da <br>instrução <span class="highlight">var</span>, <span class="highlight">let</span> ou <span class="highlight">const</span> no escopo global, <br>deve ser sempre utilizado para declaração <br>em escopo local. Considere o seguinte:</p>
+						<pre class="fragment">
+							<code>scope = 'global';
+
+function checkScope() {
+    scope = 'local';
+    myscope = 'local';
+    return [scope, myscope]
+}
+
+console.log(checkScope()); // => a saida será ['local', 'local'], a variavel foi afetada.
+console.log(scope); // => 'local'
+console.log(myscope); // => 'local'
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>Cada função tem seu próprio escopo, <br> portanto é possível ter várias camadas <br>de escopo local aninhadas:</p>
+						<pre class="fragment">
+							<code>var scope = 'global scope';
+function checkScope() {
+    var scope = 'local scope';
+    function nested() {
+        var scope = 'nested scope';
+        return scope;
+    }
+    return nested();
+}
+
+console.log(checkScope()); // => A saída será "nested scope"
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>No escopo de função, as variáveis são visíveis dentro da função de dentro de qualquer função que esteja aninhada dentro dela.</p>
+					</section>
+
+					<section>
+						<p>No exemplo a seguir, as variáveis <span class="highlight">i</span>, <span class="highlight">j</span> e <span class="highlight">k</span> são declaradas em diferentes pontos, mas <br>todas tem o mesmo escopo.</p>
+						<pre class="fragment">
+							<code>function test(o) {
+    var i = 0; // i está definida para toda a função
+    if(typeof o == 'object') {
+        var j = 0; // j está definida para toda a função e não apenas no bloco
+        for(var k = 0; k < 10; k++) { // k está definida para toda a função e não apenas no bloco
+            console.log(k); // imprime os números de 0 a 9
+        }
+        console.log(k); // k ainda está definida e imprime 10
+    }
+    console.log(j); // j está definida, mas não pode ser inicializada
+}
+
+test({str: 'fagneranabalada'});</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>O <span class="highlight">escopo de função</span> em JavaScript significa que todas as <span class="highlight">variáveis</span> declaradas dentro da função são visíveis por todo o <span class="highlight">corpo da função</span>.</p>
+					</section>
+
+					<section>
+						<p>Isso significa que as variáveis são visíveis antes mesmo de serem declaradas. Essa característica em JavaScript é chamada de <span class="highlight">içamento</span>.</p>
+						<p class="fragment"><small>* Veja mais sobre <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Glossario/Hoisting">Içamento (Hoisting)</small></a></p>
+					</section>
+
+					<section>
+						<p>O código se comporta como se todas as declarações de variáveis fossem <br>içadas para o todo da função.</p>
+						<pre class="fragment">
+							<code>var scope = 'global';
+function test() {
+    console.log(scope) // => A saida será "undefined" e não "global" ou "ReferenceError"
+    var scope = 'local'; // variavel inicializada aqui, mas visivel para todo o corpo
+    console.log(scope); // => A saida será "local"
+}
+test();</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>...é equivalente a:</p>
+						<pre class="fragment">
+							<code>function test() {
+    var scope;
+    console.log(scope) // => A saida será "undefined" e não "global" ou "ReferenceError"
+    var scope = 'local'; // variavel inicializada aqui, mas visivel para todo o corpo
+    console.log(scope); // => A saida será "local"
+}
+test();</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>É uma boa prática declarar as variáveis no início das funções, em vez de tentar declarar mais próximo ao ponto em que são utilizadas. <br>Isso reflete mais precisamente o <br>verdadeiro escopo das variáveis.</p>
+					</section>
+
+					<section>
+						<b class="highlight">É isso, próximo!</b>
+					</section>
+				</section>
+
+				<section>
+					Statements
+				</section>
+		
+				<section>
+					<section>
+						<b class="highlight">Protótipo</b>
+					</section>
+
+					<section>
+						<p>O que abordaremos?</p>
+						<ul class="highlight">
+							<li class="fragment">O que é protótipo?</li>
+							<li class="fragment">Herança</li>
+							<li class="fragment">Herança prototípica</li>
+							<li class="fragment">Protótipos em instâncias</li>
+							<li class="fragment">Protótipos em tipos primitivos</li>
+							<li class="fragment">Subclasse</li>
+						</ul>
+					</section>
+
+					<section>
+						O que é <span class="highlight">Protótipo</span>?
+						<p class="fragment"><i>Em JavaScript, um prototype é uma propriedade de funções e de objetos que são criados por funções de construtor. O protótipo de uma função é um objeto. Seu principal uso é quando uma função é usada como um construtor.</i></p>
+					</section>
+
+					<section>
+						<p>Em OOP, <span class="highlight">herança</span> refere-se a habilidade de um objeto acessar métodos e outras propriedades de outro objeto. Estes objetos então herdam essas informações de outros objetos e podem <br>utilizá-las da forma que preferirem.</p>
+					</section>
+
+					<section>
+						<p>No JavaScript não temos uma herança propriamente dita, mas ela funciona através <br>do que são chamados de <span class="highlight">protótipos</span>.</p>
+					</section>
+
+					<section>
+						<p>Esta forma de herança é conhecida como <br><span class="highlight">herança prototípica</span> (ou <span class="highlight">_prototypal inheritance_</span>).</p>
+					</section>
+
+					<section>
+						<p>Pense no seguinte cenário:</p>
+						<p class="fragment">Temos nossa classe <span class="highlight">Carro</span>, que se encontra vazia e queremos anexar um <span class="highlight">método</span> a ela. Logo utilizamos a seguinte estrutura:</p>
+					</section>
+
+					<section>
+						<pre>
+							<code>function Carro(){}
+
+Carro.prototype.andar = function(){
+    return true;
+}
+
+var meuCarro = new Carro();
+console.log(meuCarro.andar()); // => true</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>Um protótipo nos permite predefinir propriedades, incluindo métodos. Você pode saber como <br>acessar as propriedades de protótipos a <br>partir da instância do objeto com <span class="highlight">meuCarro.constructor.prototype.andar</span>.</p>
+					</section>
+
+					<section>
+						<p>A ordem de declaração do protótipo não importa, uma vez que sua atualização é "dinâmica". Então:</p>
+						<pre class="fragment">
+							<code>function Carro(){}
+
+Carro.prototype.andar = function(){
+    return true;
+}
+
+var meuCarro = new Carro();</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>...é o mesmo que:</p>
+						<pre class="fragment">
+							<code>function Carro(){}
+
+var meuCarro = new Carro();
+
+Carro.prototype.andar = function(){
+    return true;
+}</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>Podemos também instânciar <br>um objeto deste modo:</p>
+						<pre class="fragment">
+							<code>function Carro(){}
+
+var meuCarro = new Carro();
+var meuSegundoCarro = new meuCarro.constructor();
+
+console.log("Verificanco se esta afirmação é verdadeira: " + meuCarro !== meuSegundoCarro);</code>
+						</pre>
+						<p class="fragment">Note que <span class="highlight">meuCarro</span> não é o <br> mesmo objeto de <span class="highlight">meuSegundoCarro</span>, <br>mas são duas instâncias distintas.</p>
+					</section> 
+					
+					<section>
+						<p>Existem várias formas de como obter uma <br>herança com protótipos, mas sem dúvida,<br> a melhor forma é este modo:</p>
+					</section>
+
+					<section>
+						<pre>
+							<code>function Carro(){
+    this.andar = function(){
+        return true;
+    }
+} 
+
+function Acessorios(){
+    this.ligarRadio = function(){
+        console.log("ligou o radio");
+    }
+}
+
+// "Carro" agora herda "Acessorios"
+Carro.prototype = new Acessorios();
+meuCarro = new Carro();
+
+// verificando
+console.log(meuCarro instanceof Carro); // => true
+console.log(meuCarro instanceof Acessorios); // => true</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>Outra forma, porém não aconselhável é utilizar o objeto do protótipo de "Acessorios" diretamente como protótipo de "Carro".</p>
+						<p class="fragment"><span class="highlight">Ex: Carro.prototype = Acessorios.prototype;</span></p>
+					</section>
+
+					<section>
+						<p>Fazendo isto, qualquer alteração no protótipo <br>de "Carro" também modificará o protótipo de "Acessorios", pois serão o mesmo objeto. <br>Isso não é aconselhável porque pode gerar <br> <span class="highlight">efeitos colaterais indesejáveis</span>.</p>
+					</section>
+
+					<section>
+						<p>Os protótipos nos permite também estender os tipos primitivos do javascript, como <br><span class="highlight">Object</span>, <span class="highlight">Array</span>, <span class="highlight">Number</span> e etc.</p>
+					</section>
+
+					<section>
+						<p><span class="highlight">Object</span></p>
+						<pre class="fragment">
+							<code>Object.prototype.esconde = function(callback) {
+    if(this.hasOwnProperty("style")){
+        this.style.opacity = 0;
+        this.style.filter = "alpha(opacity=0)";
+        callback.call(this,this);
+    }
+};
+document.getElementById('escondido').esconde(function(element){
+    console.log("A div com o id " + element.getAttribute("id") + "foi escondida.");
+});
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span class="highlight">Array</span></p>
+						<pre class="fragment">
+							<code>Array.prototype.meuMetodo = function(callback) {
+    for(var i = 0; i < this.length; i++){
+        callback.call(this,this[i],i);
+    }
+};
+var times = ["Corinthians","São Paulo","Santos","Palmeiras"];
+times.meuMetodo(function(time, index){
+    console.log("Time: " + time + " sua posição é: " + index);
+});
+</code>
+						</pre>
+					</section>
+
+
+					<section>
+						<p><span class="highlight">Number</span></p>
+						<p class="fragment">Também podemos estender o tipo Number, <br>mas não é recomendável pois ele é um <br>protótipo nativo muito problemático.</p>
+					</section>
+
+					<section>
+						<p>Como explicado acima, existe um modo de herdamos heranças em classes JavaScript, <br>isso não é diferente com o objeto Array.</p>
+					</section>
+
+					<section>
+						<p>Vejamos um exemplo de como podemos <br>criar uma subclasse do tipo array:</p>
+						<pre class="fragment">
+							<code>function MinhaClasse(){}
+
+MinhaClasse.prototype = new Array();
+
+var meu = new MinhaClasse();
+meu.push(1,2,3);
+
+console.log("O tamanho da subclasse meu é: "+meu.length);
+</code>
+						</pre>
+					</section>
+					
+					<section>
+						<b class="highlight">É isso, próximo!</b>
+					</section>
+				</section>
+		
+				<section>
+					<section>
+						<b class="highlight">Funções</b>
+					</section>
+					
+					<section>
+						O que é <span class="highlight">Função</span>?
+						<p class="fragment"><i>É um objeto que contém um código executável, isolado, não sendo possível acessá-lo externamente.</i></p>
+					</section>
+					
+					<section>
+						<p>Para se declarar uma função <br> existem algumas formas.</p>
+					</section>
+
+					<section>
+						<p class="highlight">Function Declaration</p>
+						<pre class="fragment">
+							<code>soma(2, 2); // retorna 4
+								
+function soma(a, b) {
+	return a + b;
+}
+							</code>
+						</pre>
+						<p class="fragment">A função é carregada antes do <br>código ser interpretado.</p>
+					</section>
+					
+					<section>
+						<p class="highlight">Function Expression</p>
+						<pre class="fragment">
+							<code>var soma = function(a, b) {
+	return a + b;
+}
+
+soma(2, 2); // retorna 4
+							</code>
+						</pre>
+						<p class="fragment">A função é carregada durante <br>a interpretação do código.</p>
+					</section>
+					
+				</section>
+				
+				<section>
+					Instâncias
+				</section>
+				
+				<section>
+					<section>
+						<b class="highlight">Ajax</b>
+					</section>
+
+					<section>
+						<p>O que abordaremos?</p>
+						<ul class="highlight">
+							<li class="fragment">O que é ajax?</li>
+							<li class="fragment">XMLHttpRequest</li>
+							<li class="fragment">readyState</li>
+							<li class="fragment">onreadystatechange</li>
+							<li class="fragment">Status</li>
+							<li class="fragment">JSON</li>
+							<li class="fragment">JSONP</li>
+							<li class="fragment">Callback</li>
+							<li class="fragment">Erros comuns</li>
+						</ul>
+					</section>
+	
+					<section>
+						O que é <span class="highlight">Ajax</span>?
+						<p class="fragment"><i>Asynchronous JavaScript e XML</i></p>
+					</section>
+
+					<section>
+						<p>É o uso do objeto <span class="highlight">XMLHttpRequest</span> para se comunicar com o servidor.</p>
+					
+						<div class="fragment">
+							<pre>
+								<code>// Exemplo de requisição GET
+var ajax = new XMLHttpRequest();
+
+// Seta tipo de requisição e URL com os parâmetros
+ajax.open("GET", "uol.com.br/?nome=Fagnera&sobrenome=NaBalada", true);
+
+// Envia a requisição
+ajax.send();
+
+// Cria um evento para receber o retorno.
+ajax.onreadystatechange = function() {
+	// Caso o state seja 4 e o http.status for 200, é porque a requisição deu certo.
+	if(ajax.readyState == 4 && ajax.status == 200) {
+		var data = ajax.responseText;
+
+		// Retorno do Ajax
+		console.log(data);
+	}
+}
+								</code>
+							</pre>
+							<p><small>* Veja mais sobre <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest" class="highlight">XMLHttpRequest</a>.</small></p>
+						</div>
+					</section>
+						
+					<section>
+						<p><b class="highlight">Mas lembre-se...</b></p>
+						<p class="fragment">...antes de utilizar qualquer recurso ou qualquer lib, verifique se o projeto que você está mexendo já não tem algo para isso.</p>
+					</section>
+
+					<section>
+						<span class="highlight">readyState</span>
+						<ul>
+							<li class="fragment">0 - request não inicializado <br> <small>(método open não foi chamado)</small></li>
+							<li class="fragment">1 - conexão com servidor estabelecida <br><small>(método open foi chamado)</small></li>
+							<li class="fragment">2 - request recebido <br><small>(método send foi chamado, headers/status estão disponíveis)</small></li>
+							<li class="fragment">3 - processando request <br><small>(baixando e o responseText contém os dados parciais)</small></li>
+							<li class="fragment">4 - request finalizado e resposta pronta <br><small>(request concluído)</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<p>A função <span class="highlight">onreadystatechange</span> é disparada toda vez que o readyState é alterado.</p>
+					</section>
+
+					<section>
+						<p class="highlight">Status</p>
+						<ul>
+							<li class="fragment">2xx - Respostas de sucesso</li>
+							<li class="fragment">3xx - Mensagens de redirecionamento</li>
+							<li class="fragment">4xx - Respostas de erro do cliente</li>
+							<li class="fragment">5xx - Respostas de erro do servidor</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>Podemos enviar e<br> receber dados por:</p>
+						<ul>
+							<li>JSON</li>
+							<li>HTML</li>
+							<li>XML</li>
+						</ul>
+					</section>
+					
+					<section>
+						<p>O que podemos concluir?</p>
+						<p class="fragment"><i class="highlight">Ajax facilita o uso de aplicações interativas, sem que se recarregue as páginas.</i></p>
+					</section>
+					
+					<section>
+						<b class="highlight">JSON</b>
+					</section>
+
+					<section>
+						O que é <span class="highlight">JSON</span>?
+						<p class="fragment"><i>Javascript Object Notation</i></p>
+					</section>
+
+					<section>
+						<p>JSON é um formato leve para <br> troca de dados e de fácil leitura.</p>
+						<pre class="fragment">
+							<code>{
+	"string" : "uol.com.br",
+	"number" : 2018,
+	"array" : [1, 2, 3],
+	"object" : { string:"uol.com.br" },
+	"boolean" : true
+}
+							</code>
+						</pre>
+					</section>
+					
+					<section>
+						<b class="highlight">JSONP</b>
+					</section>
+
+					<section>
+						O que é <span class="highlight">JSONP</span>?
+						<p class="fragment"><i>Javascript Object Notation <br> with Padding</i></p>
+					</section>
+
+					<section>
+						<p>É um complemento ao formato JSON, <br> que disponibiliza um método para enviar requisições para um <span class="highlight">domínio diferente</span>.</p>
+						<p class="fragment"><small>* Veja mais sobre <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" class="highlight">Política de domínios diferentes</a>.</small></p>
+					</section>
+					
+					<section>
+						<p>Para cada novo request JSONP é <br> inserido uma tag <span class="highlight">script</span> no código.</p>
+					</section>
+	
+
+					<section>
+						<pre>
+							<code>// script.js
+var script = document.createElement('script');
+script.src = 'http://uol.com.br/?nome=Fagner&sobrenome=NaBalada&jsonp=callback';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+function callback(result) {
+	// faça alguma coisa
+}
+
+// retorno do serviço
+callback({
+	"string" : "uol.com.br",
+	"number" : 2018,
+	"array" : [1, 2, 3],
+	"object" : { string:"uol.com.br" },
+	"boolean" : true
+});</code>
+						</pre>
+					</section>
+
+					<section>
+						<b class="highlight">Callback</b>
+					</section>
+
+					<section>
+						O que é <span class="highlight">Callback</span>?
+						<p class="fragment"><i>É uma função passada a outra função <br>como parâmetro e é executada <br>para completar alguma ação.</i></p>
+					</section>
+					
+
+					<section>
+						<p>Pense no seguinte cenário:</p>
+						<pre class="fragment">
+							<code>function hello(name) {
+	alert('Olá ' + name);								
+}
+
+function getName(callback) {
+	var name = prompt('Qual o seu nome?');
+	callback(name);
+}
+
+getName(hello);
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<p>O exemplo anterior é um exemplo de callback síncrono, normalmente callback é utilizado após uma operação assíncrona ser finalizada.</p>
+					</section>
+
+					<section>
+						<p>O erro mais comum em uma requisição ajax <br>é utilizar um <span class="highlight">parâmetro randômico</span> para a url. <br> No caso da função ajax do jQuery a opção já vem como default, isso impossibilita o servidor de guardar qualquer tipo de cache para url.</p>
+					</section>
+
+					<section>
+						<b class="highlight">É isso, próximo!</b>
+					</section>
+				</section>
+
+				<section>
+					Promise
+				</section>
+
+
+				<section>
+					Reutilização de código
+				</section>
+
+				<section>
+					Boas práticas
+				</section>
+
+				<section>
+					Referências
+					https://developer.mozilla.org/
+					https://www.youtube.com/channel/UCkqOofjb7nl6V8vXrIbGtiQ
+					https://pt.wikipedia.org/
+					http://www.devmedia.com.br
+				</section>
+	<!-- 			<section>
+					<h1>Você sabia?</h1><br>
+					O nome oficial da linguagem é Ecmascript, <br> uma definição feita entre o <br> <a href="https://pt.wikipedia.org/wiki/Netscape" target="_blank">Netscape</a> + <a href="https://pt.wikipedia.org/wiki/Ecma_International" target="_blank">ECMA International</a>
+				</section> -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
