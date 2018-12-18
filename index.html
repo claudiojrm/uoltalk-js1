@@ -858,7 +858,81 @@ console.log(efetuaBusca()); // => undefined
 </code>
                         </pre>
                     </section>
-				</section>
+
+                    <section>
+                        <p>Pronto, não teremos mais o erro, porém temos <span class="highlight">undefined</span> como retorno. Isso acontece porque não especificamos o retorno da nossa função efetuaBusca(). Precisamos definir nossa promise como retorno da nossa função.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>function efetuaBusca() {
+    return new Promise((resolve, reject) => {
+
+    });
+}
+
+console.log(efetuaBusca()); // => Promise {&lt;Pending&gt;}
+</code>
+                        </pre>
+                        <p class="fragment">Agora temos como retorno uma<br> Promise com estado <span class="highlight">pending</span>.</p>
+                    </section>
+
+                    <section>
+                        <p>Para resolver nossa Promise, podemos utilizar a função <span class="highlight">resolve</span> passando como parâmetro <br>um valor que será acessível através<br> de nossa Promise resolvida.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>function efetuaBusca() {
+    new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve({
+                foo: 'bar'
+            });
+        }), 5000);
+    });
+}
+
+efetuaBusca().then(function(resultado) {
+    console.log(resultado); // => {foo: 'bar'}
+});
+</code>
+                        </pre>
+                    </section>
+				    
+                    <section>
+                        <p>Utilizamos um setTimeout para simular uma requisição que demoraria 5 segundo para retornar com a resposta. Quando passado os 5 segundos, <span class="highlight">resolve</span> será invocado passando como <span class="highlight">parâmetro o nosso objeto</span>, então <span class="highlight">then</span> é executado trazendo como parâmetro o nosso objeto esperado.</p>
+                    </section>
+
+                    <section>
+                        <p>Assim como fizemos para resolver a <br>nossa Promise, também podemos <br>rejeitar utilizando <span class="highlight">reject</span>.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>function efetuaBusca(foo) {
+    new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            if(foo) {
+                return reject(new Error('Vixiii!!! Deu erro mano!!!'));
+            }
+            resolve({status: 'fagneranabalada!'});
+        }, 5000);
+    });
+}
+efetuaBusca(true)
+    // then não foi executado
+    .then(resultado => {
+        console.log(resultado);
+    })
+    // catch foi executado trazendo como parâmetro a instância de Error passada no reject de nossa promise
+    .catch(e => {
+        console.error(e);
+    });
+</code>
+                        </pre>
+                    </section>
+                </section>
 
 				<section>
 					Reutilização de código
