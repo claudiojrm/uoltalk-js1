@@ -302,7 +302,13 @@ Carro.prototype.andar = function(){
     return true;
 }
 
-var meuCarro = new Carro();</code>
+var meuCarro = new Carro();
+
+Carro.prototype.parar = function(){
+    return true;
+}
+
+console.log(meuCarro.parar());</code>
 						</pre>
 					</section>
 
@@ -828,6 +834,23 @@ efetuaBusca(); // => "TypeError: Promise resolver is not a function"
 </code>
                         </pre>
                         <p class="fragment">Porém, isso não será o suficiente para que funcione. O código acima resultará em <br><span class="highlight">TypeError: Promise resolver is not a function</span>.</p>
+                    </section>
+
+                    <section>
+                        <p>Um detalhe importante é que na criação de uma Promise temos que passar como parâmetro uma função responsável pelo <span class="highlight">resolve</span> e <span class="highlight">reject</span>.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>function efetuaBusca() {
+    new Promise(function(resolve, reject) {
+
+    });
+}
+
+console.log(efetuaBusca()); // => undefined
+</code>
+                        </pre>
                     </section>
 				</section>
 
