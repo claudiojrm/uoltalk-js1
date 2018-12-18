@@ -674,7 +674,7 @@ console.log("O tamanho da subclasse meu é: "+meu.length);
                     </section>
                     
                     <section>
-                        <p>Existem as funções externas (padrão e definidas por terceiros) e as funções que você define.</p>
+                        <p>Existem as funções externas (padrão da linguagem e as definidas por terceiros / libs) e as funções que você define.</p>
 					</section>
 
                     <section>
@@ -708,12 +708,12 @@ soma(2, 2); // retorna 4
 					</section>
 
 					<section>
-						<p class="highlight">Parâmetros, domínio e imagem</p>
-						<p class="fragment">Para sua função agir dinamicamente, retornar 1 e 2 ela deve receber parâmetros e por meio desses parâmetros (domínio) retornar valores (imagem).</p>
+						<p class="highlight">Parâmetros</p>
+						<p class="fragment">Para sua função agir dinamicamente, retornar 1 ou 2, por exemplo, ela deve receber parâmetros e por meio desses parâmetros retornar valores.</p>
                     </section>
 
                     <section>
-						<p>Funções na programação tem sua origem na matemática. Raiz quadrada é uma função, exponêncial é outra.</p>
+						<p>Funções na programação tem sua origem na matemática. Raiz quadrada é uma função.</p>
                     </section>
 
                     <section>
@@ -808,10 +808,11 @@ var fusca = new Carro('Fusca');
 					<section>
 						O que é <span class="highlight">Ajax</span>?
 						<p class="fragment"><i>Asynchronous JavaScript e XML</i></p>
+						<p class="fragment">Uma forma (assíncrona) de chamar um recurso externo.</p>
 					</section>
 
 					<section>
-						<p>É o uso do objeto <span class="highlight">XMLHttpRequest</span> para se comunicar com o servidor.</p>
+						<p>No JavaScript usa-se o objeto nativo <span class="highlight">XMLHttpRequest</span> para se comunicar com o servidor.</p>
 					
 						<div class="fragment">
 							<pre>
@@ -876,6 +877,8 @@ ajax.onreadystatechange = function() {
 							<li>JSON</li>
 							<li>HTML</li>
 							<li>XML</li>
+							<li>Texto</li>
+							<li>Bytes</li>
 						</ul>
 					</section>
 					
@@ -891,6 +894,7 @@ ajax.onreadystatechange = function() {
 					<section>
 						O que é <span class="highlight">JSON</span>?
 						<p class="fragment"><i>Javascript Object Notation</i></p>
+						<p class="fragment">&quot;Olha como o pessoal do JS cria objetos. Legal! Fácil de criar um parse. Vamos levar isso para as outras linguagens.&quot;</p>
 					</section>
 
 					<section>
@@ -914,6 +918,15 @@ ajax.onreadystatechange = function() {
 					<section>
 						O que é <span class="highlight">JSONP</span>?
 						<p class="fragment"><i>Javascript Object Notation <br> with Padding</i></p>
+					</section>
+
+					<section>
+						Quero liberar um recurso para o público externo, mas sem liberar CORS.<br>
+						Quero acessar um recurso externo, mas sem ter que implorar para o pessoal do servidor liberar CORS
+					</section>
+
+					<section>
+						Chama via JavaScript e para saber que carregou (igual readyState == 4) o conteúdo externo vai executar uma função declarada no código.
 					</section>
 
 					<section>
