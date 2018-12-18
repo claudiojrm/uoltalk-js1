@@ -234,7 +234,209 @@ test();</code>
 				</section>
 
 				<section>
-					Statements
+					<section>
+						<b class="highlight">Statements</b>
+					</section>
+
+					
+					<section>
+						<p>O que abordaremos?</p>
+						<ul class="highlight">
+							<li class="fragment">for in</li>
+							<li class="fragment">for</li>
+							<li class="fragment">while</li>
+							<li class="fragment">break</li>
+                            <li class="fragment">continue</li>
+							<li class="fragment">labelled + break</li>
+						</ul>
+					</section>
+					
+					<section>
+						<p><span class="highlight">for in</span></p>
+						<p class="fragment">Para valores de objetos interáveis: <br>string, array, array-like, Set, Map <br>(um objeto simples não é interável)</p>
+						<pre class="fragment">
+							<code>var a = ['a', 'b', 'c'];
+
+for (var x in a) {
+    // 0, 1, 2
+}
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span>ou</span></p>
+						<pre class="fragment">
+							<code>var a = { nome : 'fagnera', sobrenome : 'nabalada' };
+
+for (var x in a) {
+    // nome, sobrenome
+    // para se obter o valor do objeto a[x] - fagnera, nabalada
+}</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span class="highlight">for</span></p>
+                        <p class="fragment"><i>construção/escopo; condição; pós execução</i></p>
+						<pre class="fragment">
+							<code>for (let x = a.length, y = 0; x--; ++y) {
+    // 2, 0
+    // 1, 1
+    // 0, 2
+}
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span class="highlight">while</span></p>
+						<pre class="fragment">
+							<code>while (true) {
+    // sentindo cheiro de queimado?
+}</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span class="highlight">break</span></p>
+                        <p class="fragment"><i>interrompe a execução</i></p>
+						<pre class="fragment">
+							<code>var a = ['a', 'b', 'c'];
+
+for(var x in a) {
+    if (x == 1) {
+        break;
+    }
+
+    console.log(x);
+    // 0
+}
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span class="highlight">continue</span></p>
+                        <p class="fragment"><i>salta a execução</i></p>
+						<pre class="fragment">
+							<code>for (const x in a) {
+    if (x == 1) {
+        continue;
+    }
+
+    console.log(x);
+    // 0, 2
+}
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<p><span class="highlight">Labelled + break</span></p>
+						<p class="fragment">Bloco de execução nomeado (labelled) que pode ser interrompido por break (lembra try catch)</p>
+						<pre class="fragment">
+							<code>meuBloco: {
+    if(true) {
+        var a = false;
+    }
+
+    c++;
+
+    if(c == 2) {
+        break meuBloco;
+    }
+    
+    c = 3;
+}</code>
+						</pre>
+					</section>
+
+                    <section>
+                        <p><span class="highlight">if</span>, <span class="highlight">elseif</span> e <span class="highlight">else</span></p>
+                        <p class="fragment">Condição se, ou então se ou então.</p>
+                        <p class="fragment">se agora for cedo; ou então se agora for tarde; <br>ou então qualquer coisa desde que <br>agora não seja cedo e tarde.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>if (a == 1) {
+    // faça algo se for 1
+}
+else if (a == 2) {
+    // faça algo se for 2
+}
+else if (a == 3) {
+    // faça algo se for 3
+}
+else {
+    // faça algo se for tudo diferente de 1, 2 e 3
+}</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p><span class="highlight">switch</span></p>
+                        <pre class="fragment">
+                            <code>switch(a) {
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    default:
+        break;
+}
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p><span class="highlight">try</span>, <span class="highlight">catch</span></p>
+                        <pre class="fragment">
+                            <code>var resp = JSON.parse('"erro');</code>
+                        </pre>
+                        <p class="fragment">JSON.parse poderia retonar null ou false ao falhar. Mas o que difere de JSON.parse("null").</p>
+                    </section>
+
+                    <section>
+                        <p>Exceções são erros que tendem a ser mais claros, no exemplo acima poderia informar a falta de <br>uma aspas e que podem navegar por <br>camadas até encontrar try catch.</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code>try {
+    var resp = JSON.parse('"erro');
+} catch (e) {
+    console.log(e);
+    // SyntaxError: Unexpected end of JSON input
+}
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p><span class="highlight">throw</span></p>
+                        <p class="fragment"><i>Cria exceções.</i></p>
+                        <pre class="fragment">
+                            <code>if(a > 1) {
+    throw 'A não pode ser maior que 1';
+}
+
+throw new Error('mensagem');
+</code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p><span class="highlight">var</span></p>
+                        <p class="fragment">Variáveis globais, locais e constantes.</p>
+                    </section>
+
+                    <section>
+                        <b class="highlight">É isso, próximo!</b>
+                    </section>
 				</section>
 		
 				<section>
