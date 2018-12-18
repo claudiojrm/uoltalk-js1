@@ -73,17 +73,18 @@
 				</section>
 
 				<section>
-					<section>Tipos</section>
 					<section>
-						<div class="highlight">String</div>
-					</section>
-					<section>Number</section>
-					<section>Number</section>
-				</section>
+						<b class="highlight">Tipos</b>
+                    </section>
+                    <section>
+                        <p>Os tipos de JavaScript podem ser divididos em tipos primitivos e tipos de objetos.</p>
+                    </section>
 
-				<section>
-					<section>
-						<b class="highlight">Escopo</b>
+                </section>
+
+                <section>
+                    <section>
+                        <b class="highlight">Escopo</b>
 					</section>
 
 					<section>
@@ -98,6 +99,7 @@
 							<li class="fragment">Içamento (Hoisting)</li>
 						</ul>
 					</section>
+
 					<section>
 						O que é <span class="highlight">Escopo</span>?
 						<p class="fragment"><i>O escopo de uma variável é a região <br>do código onde ela é definida.</i></p>
@@ -248,7 +250,11 @@ test();</code>
 							<li class="fragment">break</li>
                             <li class="fragment">continue</li>
                             <li class="fragment">labelled + break</li>
-							<li class="fragment">if, else if e else</li>
+                            <li class="fragment">if, else if e else</li>
+                            <li class="fragment">switch</li>
+							<li class="fragment">try catch</li>
+                            <li class="fragment">throw</li>
+                            <li class="fragment">var</li>
 						</ul>
 					</section>
 					
@@ -281,7 +287,7 @@ for (var x in a) {
 						<p><span class="highlight">for</span></p>
                         <p class="fragment"><i>construção/escopo; condição; pós execução</i></p>
 						<pre class="fragment">
-							<code>for (let x = a.length, y = 0; x--; ++y) {
+							<code>for(var x = a.length, y = 0; x--; ++y) {
     // 2, 0
     // 1, 1
     // 0, 2
@@ -321,7 +327,7 @@ for(var x in a) {
 						<p><span class="highlight">continue</span></p>
                         <p class="fragment"><i>salta a execução</i></p>
 						<pre class="fragment">
-							<code>for (const x in a) {
+							<code>for(var x in a) {
     if (x == 1) {
         continue;
     }
