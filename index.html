@@ -29,16 +29,16 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<section>
+					<section data-menu-title="UOLTalk">
 						<h2 class="highlight">UOLTalk</h2>
 					</section>
-					<section>
+					<section data-menu-title="O que é UOLTalk?">
 						<p>O que é o <span class="highlight">UOLTalk</span>?</p>
 					</section>
-					<section>
+					<section data-menu-title="Descrição">
 						<p>São reuniões periódicas, apresentando conteúdos relevantes para o nosso dia a dia.</p>
 					</section>
-					<section>
+					<section data-menu-title="Objetivos">
 						<p>Os objetivos do <span class="highlight">UOLTalk</span> são:</p>
 						<ul>
 							<li class="fragment">compartilhar conhecimento</li>
@@ -49,17 +49,17 @@
 				</section>
 				
 				<section>
-					<section>						
+					<section data-menu-title="UOLTalk Javascript">
 						<b class="highlight">UOLTalk Javascript</b> <br> (Módulo I)
 					</section>
-					<section>
+					<section data-menu-title="O que abordaremos?">
 						<p>O que abordaremos?</p>
 						<ul class="highlight">
                             <li class="fragment">Escopo</li>
                             <li class="fragment">Statements</li>
+                            <li class="fragment">Instâncias</li>
                             <li class="fragment">Protótipo</li>
                             <li class="fragment">Funções</li>
-                            <li class="fragment">Instâncias</li>
                             <li class="fragment">Ajax</li>
                             <li class="fragment">Promise</li>
 							<li class="fragment">Tipos</li>
@@ -68,16 +68,16 @@
 					</section>
 				</section>
 	
-				<section>
+				<section data-menu-title="Frase emblemática">
 					"A linguagem javascript é a única que as pessoas <span class="highlight">acham que não precisam aprender</span> antes de começar a utilizar." <i>- Douglas Crockford</i>
 				</section>
 
                 <section>
-                    <section>
+                    <section data-menu-title="Escopo">
                         <b class="highlight">Escopo</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que abordaremos?">
 						<p>O que abordaremos?</p>
 						<ul class="highlight">
 							<li class="fragment">O que é escopo?</li>
@@ -90,28 +90,28 @@
 						</ul>
 					</section>
 
-					<section>
+					<section data-menu-title="O que é Escopo?">
 						O que é <span class="highlight">Escopo</span>?
 						<p class="fragment"><i>O escopo se refere a visibilidade das variáveis. Em outras palavras, quais partes do programa <br>podem ver e usar essas variáveis.</i></p>
 					</section>
 
-					<section>
+					<section data-menu-title="Escopo global">
 						<p>Uma variável <span class="highlight">global</span> tem escopo <span class="highlight">global</span> e pode ser acessada em toda a parte do programa.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Escopo de uma função">
 						<p>Por outro lado é útil limitar o acesso de algumas variáveis ao escopo de uma função (ou bloco de execução), assim você garante que o resultado não será afetado por uma redefinição, por exemplo.</p>						
 					</section>
 
-					<section>
+					<section data-menu-title="Variáveis locais">
 						<p>Variáveis declaradas dentro de um escopo são chamadas de <span class="highlight">variáveis locais</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Parâmetros de funções">
 						<p><span class="highlight">Parâmetros de funções</span> são variáveis<br> locais de escopo limitado.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Precedência variável">
 						<p>Uma variável local tem precedência sobre uma variável global com o mesmo nome, ou seja, a variável global é ocultada pela variável local.</p>
 						<pre class="fragment">
 							<code>var scope = 'global';
@@ -126,7 +126,7 @@ console.log(checkScope()); // => a saída será "local"
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Utiliação de var">
 						<p>Embora seja possível a não utilização da <br>instrução <span class="highlight">var</span> no escopo global, ela  <br>deve ser sempre utilizada para declaração <br>em escopo local. Considere o seguinte:</p>
 						<pre class="fragment">
 							<code>scope = 'global';
@@ -144,7 +144,7 @@ console.log(myscope); // => 'local'
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Camadas aninhadas">
 						<p>Cada função define um escopo, <br> portanto é possível ter várias camadas <br>de escopo local aninhadas:</p>
 						<pre class="fragment">
 							<code>var scope = 'global Fred';
@@ -162,11 +162,11 @@ console.log(checkScope()); // => A saída será "nested Paul"
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Escopo de função">
 						<p>No escopo de função, as variáveis são visíveis dentro da função de dentro de qualquer função que esteja aninhada dentro dela.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Escopo igual">
 						<p>No exemplo a seguir, as variáveis <span class="highlight">i</span>, <span class="highlight">j</span> e <span class="highlight">k</span> são declaradas em diferentes pontos, mas <br>todas tem o mesmo escopo.</p>
 						<pre class="fragment">
 							<code>function test(o) {
@@ -185,16 +185,16 @@ test({str: 'fagneranabalada'});</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Escopo de função">
 						<p>O <span class="highlight">escopo de função</span> em JavaScript significa que todas as <span class="highlight">variáveis</span> declaradas dentro da função são visíveis por todo o <span class="highlight">corpo da função</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Içamento I">
 						<p>Isso significa que as variáveis são visíveis antes mesmo de serem declaradas. Essa característica em JavaScript é chamada de <span class="highlight">içamento</span>.</p>
 						<p class="fragment"><small>* Veja mais sobre <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Glossario/Hoisting">Içamento (Hoisting)</small></a></p>
 					</section>
 
-					<section>
+					<section data-menu-title="Içamento II">
 						<p>O código se comporta como se todas as declarações de variáveis fossem <br>içadas para o todo da função.</p>
 						<pre class="fragment">
 							<code>var scope = 'global';
@@ -207,7 +207,7 @@ test();</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Içamento III">
 						<p>...é equivalente a:</p>
 						<pre class="fragment">
 							<code>function test() {
@@ -220,22 +220,22 @@ test();</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Boa prática">
 						<p>É uma boa prática declarar as variáveis no início das funções, em vez de tentar declarar mais próximo ao ponto em que são utilizadas. <br>Isso reflete mais precisamente o <br>verdadeiro escopo das variáveis.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Fim">
 						<b class="highlight">É isso, próximo!</b>
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section data-menu-title="Statements">
 						<b class="highlight">Statements</b>
 					</section>
 
 					
-					<section>
+					<section data-menu-title="O que abordaremos?">
 						<p>O que abordaremos?</p>
 						<ul class="highlight">
 							<li class="fragment">for in</li>
@@ -252,7 +252,7 @@ test();</code>
 						</ul>
 					</section>
 					
-					<section>
+					<section data-menu-title="for in I">
 						<p><span class="highlight">for in</span></p>
 						<p class="fragment">Para valores de objetos interáveis: <br>string, array, array-like, Set, Map <br>(um objeto simples não é interável)</p>
 						<pre class="fragment">
@@ -265,7 +265,7 @@ for (var x in a) {
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="for in II">
 						<p><span>ou</span></p>
 						<pre class="fragment">
 							<code>var a = { nome : 'fagnera', sobrenome : 'nabalada' };
@@ -277,7 +277,7 @@ for (var x in a) {
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="for">
 						<p><span class="highlight">for</span></p>
                         <p class="fragment"><i>construção/escopo; condição; pós execução</i></p>
 						<pre class="fragment">
@@ -290,7 +290,7 @@ for (var x in a) {
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="while">
 						<p><span class="highlight">while</span></p>
 						<pre class="fragment">
 							<code>while (true) {
@@ -299,7 +299,7 @@ for (var x in a) {
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="break">
 						<p><span class="highlight">break</span></p>
                         <p class="fragment"><i>interrompe a execução de um loop</i></p>
 						<pre class="fragment">
@@ -317,7 +317,7 @@ for(var x in a) {
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="continue">
 						<p><span class="highlight">continue</span></p>
                         <p class="fragment"><i>salta a execução para o próximo item do loop</i></p>
 						<pre class="fragment">
@@ -335,7 +335,7 @@ for(var x in a) {
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Labelled + break">
 						<p><span class="highlight">Labelled + break</span></p>
 						<p class="fragment">Bloco de execução nomeado (labelled) que pode ser interrompido por break (lembra try catch)</p>
 						<pre class="fragment">
@@ -355,13 +355,13 @@ for(var x in a) {
 						</pre>
 					</section>
 
-                    <section>
+                    <section data-menu-title="if, else if e else I">
                         <p><span class="highlight">if</span>, <span class="highlight">else if</span> e <span class="highlight">else</span></p>
                         <p class="fragment">Condição se, ou então se ou então.</p>
                         <p class="fragment">se agora for cedo; ou então se agora for tarde; <br>ou então qualquer coisa desde que <br>agora não seja cedo e tarde.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="if, else if e else II">
                         <pre>
                             <code>if (a == 1) {
     // faça algo se for 1
@@ -375,7 +375,7 @@ for(var x in a) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="switch">
 						<p><span class="highlight">switch</span></p>
 						<p class="fragment">Alinhando um monte de if.</p>
                         <pre class="fragment">
@@ -393,19 +393,19 @@ for(var x in a) {
                         </pre>
                     </section>
 
-                    <section>
-                        <p><span class="highlight">try</span>, <span class="highlight">catch</span></p>
+                    <section data-menu-title="try e catch">
+                        <p><span class="highlight">try</span> e <span class="highlight">catch</span></p>
                         <pre class="fragment">
                             <code>var resp = JSON.parse('"erro');</code>
                         </pre>
                         <p class="fragment">JSON.parse poderia retonar null ou false ao falhar. Mas o que difere de JSON.parse("null")?</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exceções I">
                         <p>Exceções são erros mais claros (ou deveriam), no exemplo acima poderia informar a falta de <br>uma aspas e que podem navegar por <br>camadas até encontrar <span class="highlight">try catch</span>.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exceções II">
                         <pre>
                             <code>try {
     var resp = JSON.parse('"erro');
@@ -417,7 +417,7 @@ for(var x in a) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="throw">
                         <p><span class="highlight">throw</span></p>
                         <p class="fragment"><i>Criando exceções!</i></p>
                         <pre class="fragment">
@@ -430,22 +430,85 @@ throw new Error('mensagem');
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="var">
                         <p><span class="highlight">var</span></p>
                         <p class="fragment">Para declarações de variáveis.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Fim">
                         <b class="highlight">É isso, próximo!</b>
                     </section>
 				</section>
-		
+			
 				<section>
-					<section>
+					<section data-menu-title="Instância">
+                        <b class="highlight">Instância</b>
+                    </section>
+
+                    <section data-menu-title="O que abordaremos?">
+                        <p>O que abordaremos?</p>
+                        <ul class="highlight">
+                            <li class="fragment">O que é Instância?</li>
+                            <li class="fragment">Conjunto de atributos</li>
+                            <li class="fragment">Concretização de uma classe</li>
+                            <li class="fragment">Exemplo prático</li>
+                        </ul>
+                    </section>
+    
+                    <section data-menu-title="O que é Instância?">
+                        O que é <span class="highlight">Instância</span>?
+                        <p class="fragment"><i>Em programação orientada a objetos, instância é um objeto que tem o seu estado e comportamento definido pela classe.</i></p>
+                    </section>
+
+                    <section data-menu-title="Conjunto de atributos">
+                        <p>As instâncias de uma classe compartilham o mesmo <span class="highlight">conjunto de atributos</span>, embora sejam diferentes quanto ao <span class="highlight">conteúdo desses atributos</span>.</p>
+                    </section>
+    
+                    <section data-menu-title="Atributos comuns">
+                        <p>Por exemplo, a classe <span class="highlight">TitleController</span> <br> descreve os atributos comuns a todas as <br> instâncias da própria classe.</p>
+                    </section>
+
+                    <section data-menu-title="Objetos de classe">
+                        <p>Os objetos dessa classe podem ser semelhantes, mas variam em atributos.</p>
+                    </section>
+
+                    <section  data-menu-title="Ações relevantes">
+                        <p>A descrição da classe contém os itens correspondentes a esses atributos e define as operações ou ações relevantes para a classe.</p>
+                    </section>
+
+                    <section data-menu-title="Concretização de classe">
+                        <p><i class="highlight">Instância é a concretização de uma classe.</i></p>
+                        <p class="fragment">Em programação orientada a objetos, a palavra <span class="highlight">instanciar</span> significa criar. Quando falamos em instanciar um objeto, criamos fisicamente uma representação concreta da classe.</p>
+                    </section>
+                    
+                    <section data-menu-title="Exemplo">
+                        <p>Pense no seguinte cenário:</p>
+                        <pre class="fragment">
+                            <code>function Carro(modelo) {
+    this.modelo = modelo;
+}
+
+var belina = new Carro('Belina');
+var fusca = new Carro('Fusca');
+</code>
+                        </pre>
+                    </section>
+
+                    <section data-menu-title="Explicando o exemplo">
+                        <p><span class="highlight">Carro</span> é uma classe ou um molde, <br><span class="highlight">Belina</span> é uma instância de Carro e apesar de carregar todas as características de Carro, é completamente independente de <br>outras instâncias de Carro.</p>
+                    </section>
+                    
+                    <section data-menu-title="Fim">
+                        <b class="highlight">É isso, próximo!</b>
+                    </section>
+				</section>
+
+				<section>
+					<section data-menu-title="Protótipo">
 						<b class="highlight">Protótipo</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que abordaremos?">
 						<p>O que abordaremos?</p>
 						<ul class="highlight">
 							<li class="fragment">O que é protótipo?</li>
@@ -457,29 +520,29 @@ throw new Error('mensagem');
 						</ul>
 					</section>
 
-					<section>
+					<section data-menu-title="O que é Protótipo?">
 						O que é <span class="highlight">Protótipo</span>?
 						<p class="fragment"><i>Em JavaScript, um prototype é uma propriedade de funções e de objetos que são criados por funções de construtor. O protótipo de uma função é um objeto. Seu principal uso é quando uma função é usada como um construtor.</i></p>
 					</section>
 
-					<section>
+					<section data-menu-title="Herança">
 						<p>Em OOP, <span class="highlight">herança</span> refere-se a habilidade de um objeto acessar métodos e outras propriedades de outro objeto. Estes objetos então herdam essas informações de outros objetos e podem <br>utilizá-las da forma que preferirem.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Protótipos">
 						<p>No JavaScript não temos uma herança propriamente dita, mas ela funciona através <br>do que são chamados de <span class="highlight">protótipos</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Herança prototípica">
 						<p>Esta forma de herança é conhecida como <br><span class="highlight">herança prototípica</span> (ou <span class="highlight">_prototypal inheritance_</span>).</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Exemplo I">
 						<p>Pense no seguinte cenário:</p>
 						<p class="fragment">Temos nossa classe <span class="highlight">Carro</span>, que se encontra vazia e queremos anexar um <span class="highlight">método</span> a ela. Logo utilizamos a seguinte estrutura:</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Exemplo II">
 						<pre>
 							<code>function Carro(){}
 
@@ -492,11 +555,11 @@ console.log(meuCarro.andar()); // => true</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Instância do objeto">
 						<p>Um protótipo nos permite predefinir propriedades, incluindo métodos. Você pode saber como <br>acessar as propriedades de protótipos a <br>partir da instância do objeto com <span class="highlight">meuCarro.constructor.prototype.andar</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Ordem de declaração I">
 						<p>A ordem de declaração do protótipo não importa, uma vez que sua atualização é "dinâmica". Então:</p>
 						<pre class="fragment">
 							<code>function Carro(){}
@@ -515,7 +578,7 @@ console.log(meuCarro.parar());</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Ordem de declaração II">
 						<p>...é o mesmo que:</p>
 						<pre class="fragment">
 							<code>function Carro(){}
@@ -534,7 +597,7 @@ console.log(meuCarro.parar())</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Instanciar um objeto">
 						<p>Podemos também instânciar <br>um objeto deste modo:</p>
 						<pre class="fragment">
 							<code>function Carro(){}
@@ -547,11 +610,11 @@ console.log("Verificanco se esta afirmação é verdadeira: " + meuCarro !== meu
 						<p class="fragment">Note que <span class="highlight">meuCarro</span> não é o <br> mesmo objeto de <span class="highlight">meuSegundoCarro</span>, <br>mas são duas instâncias distintas.</p>
 					</section> 
 					
-					<section>
+					<section data-menu-title="Herança com protótipos">
 						<p>Existem várias formas de como obter uma <br>herança com protótipos, mas sem dúvida,<br> a melhor forma é este modo:</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Exemplo">
 						<pre>
 							<code>function Carro(){
     this.andar = function(){
@@ -575,20 +638,20 @@ console.log(meuCarro instanceof Acessorios); // => true</code>
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Não defina dessa forma">
 						<p>Outra forma, porém não aconselhável é utilizar o objeto do protótipo de "Acessorios" diretamente como protótipo de "Carro".</p>
 						<p class="fragment"><span class="highlight">Ex: Carro.prototype = Acessorios.prototype;</span></p>
 					</section>
 
-					<section>
+					<section data-menu-title="Efeitos colaterais">
 						<p>Fazendo isto, qualquer alteração no protótipo <br>de "Carro" também modificará o protótipo de "Acessorios", pois serão o mesmo objeto. <br>Isso não é aconselhável porque pode gerar <br> <span class="highlight">efeitos colaterais indesejáveis</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Tipos primitivos">
 						<p>Os protótipos nos permite também estender os tipos primitivos do javascript, como <br><span class="highlight">Object</span>, <span class="highlight">Array</span>, <span class="highlight">Number</span> e etc.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Object">
 						<p><span class="highlight">Object</span></p>
 						<pre class="fragment">
 							<code>Object.prototype.esconde = function(callback) {
@@ -605,7 +668,7 @@ document.getElementById('escondido').esconde(function(element){
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Array">
 						<p><span class="highlight">Array</span></p>
 						<pre class="fragment">
 							<code>Array.prototype.meuMetodo = function(callback) {
@@ -622,16 +685,16 @@ times.meuMetodo(function(time, index){
 					</section>
 
 
-					<section>
+					<section data-menu-title="Number">
 						<p><span class="highlight">Number</span></p>
 						<p class="fragment">Também podemos estender o tipo Number, <br>mas não é recomendável pois ele é um <br>protótipo nativo muito problemático.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Classes JavaScript">
 						<p>Como explicado acima, existe um modo de herdamos heranças em classes JavaScript, <br>isso não é diferente com o objeto Array.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Subclasse">
 						<p>Vejamos um exemplo de como podemos <br>criar uma subclasse do tipo array:</p>
 						<pre class="fragment">
 							<code>function MinhaClasse(){}
@@ -646,7 +709,7 @@ console.log("O tamanho da subclasse meu é: "+meu.length);
 						</pre>
 					</section>
 					
-					<section>
+					<section data-menu-title="Fim">
 						<b class="highlight">É isso, próximo!</b>
 					</section>
 				</section>
@@ -722,69 +785,6 @@ soma(2, 2); // retorna 4
                         <b class="highlight">É isso, próximo!</b>
                     </section>
 					
-				</section>
-				
-				<section>
-					<section>
-                        <b class="highlight">Instância</b>
-                    </section>
-
-                    <section>
-                        <p>O que abordaremos?</p>
-                        <ul class="highlight">
-                            <li class="fragment">O que é Instância?</li>
-                            <li class="fragment">Conjunto de atributos</li>
-                            <li class="fragment">Concretização de uma classe</li>
-                            <li class="fragment">Exemplo prático</li>
-                        </ul>
-                    </section>
-    
-                    <section>
-                        O que é <span class="highlight">Instância</span>?
-                        <p class="fragment"><i>Em programação orientada a objetos, instância é um objeto que tem o seu estado e comportamento definido pela classe.</i></p>
-                    </section>
-
-                    <section>
-                        <p>As instâncias de uma classe compartilham o mesmo <span class="highlight">conjunto de atributos</span>, embora sejam diferentes quanto ao <span class="highlight">conteúdo desses atributos</span>.</p>
-                    </section>
-    
-                    <section>
-                        <p>Por exemplo, a classe <span class="highlight">TitleController</span> <br> descreve os atributos comuns a todas as <br> instâncias da própria classe.</p>
-                    </section>
-
-                    <section>
-                        <p>Os objetos dessa classe podem ser semelhantes, mas variam em atributos. </p>
-                    </section>
-
-                    <section>
-                        <p>A descrição da classe contém os itens correspondentes a esses atributos e define as operações ou ações relevantes para a classe.</p>
-                    </section>
-
-                    <section>
-                        <p><i class="highlight">Instância é a concretização de uma classe.</i></p>
-                        <p class="fragment">Em programação orientada a objetos, a palavra <span class="highlight">instanciar</span> significa criar. Quando falamos em instanciar um objeto, criamos fisicamente uma representação concreta da classe.</p>
-                    </section>
-                    
-                    <section>
-                        <p>Pense no seguinte cenário:</p>
-                        <pre class="fragment">
-                            <code>function Carro(modelo) {
-    this.modelo = modelo;
-}
-
-var belina = new Carro('Belina');
-var fusca = new Carro('Fusca');
-</code>
-                        </pre>
-                    </section>
-
-                    <section>
-                        <p><span class="highlight">Carro</span> é uma classe ou um molde, <br><span class="highlight">Belina</span> é uma instância de Carro e apesar de carregar todas as características de Carro, é completamente independente de <br>outras instâncias de Carro.</p>
-                    </section>
-                    
-                    <section>
-                        <b class="highlight">É isso, próximo!</b>
-                    </section>
 				</section>
 				
 				<section>
@@ -1516,7 +1516,8 @@ if(x) {
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'node_modules/reveal.js-menu/menu.js' }
 				]
 			});
 		</script>
