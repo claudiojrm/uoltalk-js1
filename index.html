@@ -108,7 +108,7 @@
 					</section>
 
 					<section>
-						<p><span class="highlight">Parâmetros de funções</span> são variáveis locais de escopo limitado.</p>
+						<p><span class="highlight">Parâmetros de funções</span> são variáveis<br> locais de escopo limitado.</p>
 					</section>
 
 					<section>
@@ -281,7 +281,7 @@ for (var x in a) {
 						<p><span class="highlight">for</span></p>
                         <p class="fragment"><i>construção/escopo; condição; pós execução</i></p>
 						<pre class="fragment">
-							<code>for(var x = a.length, y = 0; x--; ++y) {
+							<code>for(var x = 2, y = 0; y < 3; x--, ++y) {
     // 2, 0
     // 1, 1
     // 0, 2
@@ -321,7 +321,9 @@ for(var x in a) {
 						<p><span class="highlight">continue</span></p>
                         <p class="fragment"><i>salta a execução para o próximo item do loop</i></p>
 						<pre class="fragment">
-							<code>for(var x in a) {
+							<code>var a = ['a', 'b', 'c'];
+
+for(var x in a) {
     if (x == 1) {
         continue;
     }
@@ -363,14 +365,11 @@ for(var x in a) {
                         <pre>
                             <code>if (a == 1) {
     // faça algo se for 1
-}
-else if (a == 2) {
+} else if (a == 2) {
     // faça algo se for 2
-}
-else if (a == 3) {
+} else if (a == 3) {
     // faça algo se for 3
-}
-else {
+} else {
     // faça algo se for tudo diferente de 1, 2 e 3
 }</code>
                         </pre>
@@ -677,7 +676,7 @@ console.log("O tamanho da subclasse meu é: "+meu.length);
                     </section>
                     
                     <section>
-                        <p>Existem as funções externas (padrão da linguagem e as definidas por terceiros / libs) e as funções que você define.</p>
+                        <p>Existem as funções externas (padrão da linguagem e as definidas por terceiros / libs) e<br> as funções que você define.</p>
 					</section>
 
                     <section>
@@ -811,11 +810,14 @@ var fusca = new Carro('Fusca');
 					<section>
 						O que é <span class="highlight">Ajax</span>?
 						<p class="fragment"><i>Asynchronous JavaScript e XML</i></p>
-						<p class="fragment">Uma forma (assíncrona) de chamar um recurso externo.</p>
-					</section>
+                    </section>
+
+                    <section>
+						<p>Uma forma <span class="highlight">assíncrona</span> de <br>chamar um recurso externo.</p>
+                    </section>
 
 					<section>
-						<p>No JavaScript usa-se o objeto nativo <span class="highlight">XMLHttpRequest</span> para se comunicar com o servidor.</p>
+						<p>No JavaScript usa-se o objeto<br> nativo <span class="highlight">XMLHttpRequest</span> para se <br>comunicar com o servidor.</p>
 					
 						<div class="fragment">
 							<pre>
@@ -846,7 +848,7 @@ ajax.onreadystatechange = function() {
 						
 					<section>
 						<p><b class="highlight">Mas lembre-se...</b></p>
-						<p class="fragment">...antes de utilizar qualquer recurso ou qualquer lib, verifique se o projeto que você está mexendo já não tem algo para isso.</p>
+						<p class="fragment">...antes de utilizar qualquer recurso ou qualquer lib, verifique se o projeto que você está <br>mexendo  já não tem algo para isso.</p>
 					</section>
 
 					<section>
@@ -861,7 +863,7 @@ ajax.onreadystatechange = function() {
 					</section>
 
 					<section>
-						<p>A função <span class="highlight">onreadystatechange</span> é disparada toda vez que o readyState é alterado.</p>
+						<p>A função <span class="highlight">onreadystatechange</span> é disparada <br>toda vez que o readyState é alterado.</p>
 					</section>
 
 					<section>
@@ -887,7 +889,7 @@ ajax.onreadystatechange = function() {
 					
 					<section>
 						<p>O que podemos concluir?</p>
-						<p class="fragment"><i class="highlight">Ajax facilita o uso de aplicações interativas, sem que se recarregue as páginas.</i></p>
+						<p class="fragment"><i class="highlight">Ajax facilita o uso de aplicações interativas, <br>sem que se recarregue as páginas.</i></p>
 					</section>
 					
 					<section>
@@ -897,8 +899,11 @@ ajax.onreadystatechange = function() {
 					<section>
 						O que é <span class="highlight">JSON</span>?
 						<p class="fragment"><i>Javascript Object Notation</i></p>
-						<p class="fragment">&quot;Olha como o pessoal do JS cria objetos. Legal! Fácil de criar um parse. Vamos levar isso para as outras linguagens.&quot;</p>
-					</section>
+                    </section>
+                        
+                    <section>
+						<p><i>Olha como o pessoal do JS cria objetos. Legal! <br>Fácil de criar um parse. Vamos levar <br>isso para as outras linguagens.</i></p>
+                    </section>
 
 					<section>
 						<p>JSON é um formato leve para <br> troca de dados e de fácil leitura.</p>
@@ -924,12 +929,12 @@ ajax.onreadystatechange = function() {
 					</section>
 
 					<section>
-						Quero liberar um recurso para o público externo, mas sem liberar CORS.<br>
-						Quero acessar um recurso externo, mas sem ter que implorar para o pessoal do servidor liberar CORS
+						<p>Quero liberar um recurso para o <br>público externo, mas sem liberar <span class="highlight">CORS</span>. Quero acessar um recurso externo, mas sem ter que implorar para o pessoal do servidor liberar <span class="highlight">CORS</span>.</p>
+                        <p class="fragment"><small>* Veja mais sobre <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Controle_Acesso_CORS" target="_blank">CORS</a>.</small></p>
 					</section>
 
 					<section>
-						Chama via JavaScript e para saber que carregou (igual readyState == 4) o conteúdo externo vai executar uma função declarada no código.
+						Faz o request via JavaScript e para saber<br> que carregou (igual readyState == 4) o<br> conteúdo externo vai executar uma<br> função declarada no código.
 					</section>
 
 					<section>
