@@ -607,7 +607,6 @@ var meuSegundoCarro = new meuCarro.constructor();
 
 console.log("Verificanco se esta afirmação é verdadeira: " + meuCarro !== meuSegundoCarro);</code>
 						</pre>
-						<p class="fragment">Note que <span class="highlight">meuCarro</span> não é o <br> mesmo objeto de <span class="highlight">meuSegundoCarro</span>, <br>mas são duas instâncias distintas.</p>
 					</section> 
 					
 					<section data-menu-title="Herança com protótipos">
@@ -715,11 +714,11 @@ console.log("O tamanho da subclasse meu é: "+meu.length);
 				</section>
 		
 				<section>
-					<section>
+					<section data-menu-title="Funções">
 						<b class="highlight">Funções</b>
 					</section>
 
-                    <section>
+                    <section data-menu-title="O que abordaremos?">
                         <p>O que abordaremos?</p>
                         <ul class="highlight">
                             <li class="fragment">O que é função?</li>
@@ -729,24 +728,24 @@ console.log("O tamanho da subclasse meu é: "+meu.length);
                         </ul>
                     </section>
 					
-					<section>
+					<section data-menu-title="O que é uma Função?">
 						O que é <span class="highlight">Função</span>?
                         <p class="fragment"><i>É um objeto que contém um código executável, isolado, não sendo possível acessá-lo externamente.</i></p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Código limpo">
                         <p>As funções tornam nosso código limpo e <br>fácil de ler e nos evitam reescrever o<br> mesmo código várias vezes.</p>                        
                     </section>
                     
-                    <section>
+                    <section data-menu-title="Funções externas">
                         <p>Existem as funções externas (padrão da linguagem e as definidas por terceiros / libs) e<br> as funções que você define.</p>
 					</section>
 
-                    <section>
+                    <section data-menu-title="Definir funções">
                         <p>Existem algumas formas de definir suas funções.</p>
                     </section>
 
-					<section>
+					<section data-menu-title="Declaração de função">
 						<p class="highlight">Declaração de função</p>
 						<pre class="fragment">
 							<code>soma(2, 2); // retorna 4
@@ -759,7 +758,7 @@ function soma(a, b) {
 						<p class="fragment">A função é carregada antes do <br>código ser executado.</p>
 					</section>
 					
-					<section>
+					<section data-menu-title="Função anônima">
 						<p class="highlight">Função anônima, atribuída a uma variável</p>
 						<pre class="fragment">
 							<code>var soma = function(a, b) {
@@ -772,27 +771,23 @@ soma(2, 2); // retorna 4
 						<p class="fragment">A função é carregada durante <br>a execução do código.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Parâmetros">
 						<p class="highlight">Parâmetros</p>
 						<p class="fragment">Para sua função agir dinamicamente, retornar 1 ou 2, por exemplo, ela deve receber parâmetros e por meio desses parâmetros retornar valores.</p>
                     </section>
 
-                    <section>
-						<p>Funções na programação tem sua origem na matemática. Raiz quadrada é uma função.</p>
-                    </section>
-
-                    <section>
+                    <section data-menu-title="Fim">
                         <b class="highlight">É isso, próximo!</b>
                     </section>
 					
 				</section>
 				
 				<section>
-					<section>
+					<section data-menu-title="Ajax">
 						<b class="highlight">Ajax</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que abordaremos?">
 						<p>O que abordaremos?</p>
 						<ul class="highlight">
 							<li class="fragment">O que é ajax?</li>
@@ -807,16 +802,16 @@ soma(2, 2); // retorna 4
 						</ul>
 					</section>
 	
-					<section>
+					<section data-menu-title="O que é Ajax?">
 						O que é <span class="highlight">Ajax</span>?
 						<p class="fragment"><i>Asynchronous JavaScript e XML</i></p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Assíncrona">
 						<p>Uma forma <span class="highlight">assíncrona</span> de <br>chamar um recurso externo.</p>
                     </section>
 
-					<section>
+					<section data-menu-title="XMLHttpRequest">
 						<p>No JavaScript usa-se o objeto<br> nativo <span class="highlight">XMLHttpRequest</span> para se <br>comunicar com o servidor.</p>
 					
 						<div class="fragment">
@@ -846,12 +841,12 @@ ajax.onreadystatechange = function() {
 						</div>
 					</section>
 						
-					<section>
+					<section data-menu-title="Lembre-se">
 						<p><b class="highlight">Mas lembre-se...</b></p>
 						<p class="fragment">...antes de utilizar qualquer recurso ou qualquer lib, verifique se o projeto que você está <br>mexendo  já não tem algo para isso.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="readyState">
 						<span class="highlight">readyState</span>
 						<ul>
 							<li class="fragment">0 - request não inicializado <br> <small>(método open não foi chamado)</small></li>
@@ -862,11 +857,11 @@ ajax.onreadystatechange = function() {
 						</ul>
 					</section>
 
-					<section>
+					<section data-menu-title="onreadystatechange">
 						<p>A função <span class="highlight">onreadystatechange</span> é disparada <br>toda vez que o readyState é alterado.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Status">
 						<p class="highlight">Status</p>
 						<ul>
 							<li class="fragment">2xx - Respostas de sucesso</li>
@@ -876,7 +871,7 @@ ajax.onreadystatechange = function() {
 						</ul>
 					</section>
 
-					<section>
+					<section data-menu-title="Tipos de dados">
 						<p>Podemos enviar e<br> receber dados por:</p>
 						<ul>
 							<li>JSON</li>
@@ -887,25 +882,25 @@ ajax.onreadystatechange = function() {
 						</ul>
 					</section>
 					
-					<section>
+					<section data-menu-title="Aplicações interativas">
 						<p>O que podemos concluir?</p>
 						<p class="fragment"><i class="highlight">Ajax facilita o uso de aplicações interativas, <br>sem que se recarregue as páginas.</i></p>
 					</section>
 					
-					<section>
+					<section data-menu-title="JSON">
 						<b class="highlight">JSON</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que é JSON?">
 						O que é <span class="highlight">JSON</span>?
 						<p class="fragment"><i>Javascript Object Notation</i></p>
                     </section>
                         
-                    <section>
+                    <section data-menu-title="Facilidade de parse">
 						<p><i>Olha como o pessoal do JS cria objetos. Legal! <br>Fácil de criar um parse. Vamos levar <br>isso para as outras linguagens.</i></p>
                     </section>
 
-					<section>
+					<section data-menu-title="Formato mais leve">
 						<p>JSON é um formato leve para <br> troca de dados e de fácil leitura.</p>
 						<pre class="fragment">
 							<code>{
@@ -919,35 +914,35 @@ ajax.onreadystatechange = function() {
 						</pre>
 					</section>
 					
-					<section>
+					<section data-menu-title="JSONP">
 						<b class="highlight">JSONP</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que é JSONP?">
 						O que é <span class="highlight">JSONP</span>?
 						<p class="fragment"><i>Javascript Object Notation <br> with Padding</i></p>
 					</section>
 
-					<section>
+					<section data-menu-title="CORS">
 						<p>Quero liberar um recurso para o <br>público externo, mas sem liberar <span class="highlight">CORS</span>. Quero acessar um recurso externo, mas sem ter que implorar para o pessoal do servidor liberar <span class="highlight">CORS</span>.</p>
                         <p class="fragment"><small>* Veja mais sobre <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Controle_Acesso_CORS" target="_blank">CORS</a>.</small></p>
 					</section>
 
-					<section>
-						Faz o request via JavaScript e para saber<br> que carregou (igual readyState == 4) o<br> conteúdo externo vai executar uma<br> função declarada no código.
+					<section data-menu-title="Executa a função">
+						<i>Realiza o request via JavaScript e para saber<br> que carregou (igual readyState == 4) o<br> conteúdo externo vai executar uma<br> função declarada no código.</i>
 					</section>
 
-					<section>
+					<section data-menu-title="Complemento JSON">
 						<p>É um complemento ao formato JSON, <br> que disponibiliza um método para enviar requisições para um <span class="highlight">domínio diferente</span>.</p>
 						<p class="fragment"><small>* Veja mais sobre <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" class="highlight">Política de domínios diferentes</a>.</small></p>
 					</section>
 					
-					<section>
+					<section data-menu-title="Tag script">
 						<p>Para cada novo request JSONP é <br> inserido uma tag <span class="highlight">script</span> no código.</p>
 					</section>
 	
 
-					<section>
+					<section data-menu-title="Exemplo">
 						<pre>
 							<code>// script.js
 var script = document.createElement('script');
@@ -969,17 +964,17 @@ callback({
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Callback">
 						<b class="highlight">Callback</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que é Callback?">
 						O que é <span class="highlight">Callback</span>?
 						<p class="fragment"><i>É uma função passada a outra função <br>como parâmetro e é executada <br>para completar alguma ação.</i></p>
 					</section>
 					
 
-					<section>
+					<section data-menu-title="Exemplo">
 						<p>Pense no seguinte cenário:</p>
 						<pre class="fragment">
 							<code>function hello(name) {
@@ -996,25 +991,25 @@ getName(hello);
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Callback síncrono">
 						<p>O exemplo anterior é um exemplo de callback síncrono, normalmente callback é utilizado após uma operação assíncrona ser finalizada.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Erro comum">
 						<p>O erro mais comum em uma requisição ajax <br>é utilizar um <span class="highlight">parâmetro randômico</span> para a url. <br> No caso da função ajax do jQuery a opção já vem como default, isso impossibilita o servidor de guardar qualquer tipo de cache para url.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Fim">
 						<b class="highlight">É isso, próximo!</b>
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section data-menu-title="Promise">
 						<b class="highlight">Promise</b>
 					</section>
 
-					<section>
+					<section data-menu-title="O que abordaremos?">
 						<p>O que abordaremos?</p>
 						<ul class="highlight fragment">
                             <li>O que é Promise?</li>
@@ -1026,16 +1021,16 @@ getName(hello);
 						</ul>
 					</section>
 
-					<section>
+					<section data-menu-title="O que é Promise?">
 						O que é <span class="highlight">Promise</span>?
 						<p class="fragment"><i>Promise é um objeto que permite realizar processamentos assíncronos, guardando um valor que pode estar disponível agora, no futuro ou nunca. </i></p>
 					</section>
 
-					<section>
+					<section data-menu-title="Ações assíncronas">
 						<p>A Promise permite o tratamento de <span class="highlight">ações assíncronas</span> em casos de <span class="highlight">sucesso</span> ou <span class="highlight">falhas</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Estados da Promise">
 						<p>A Promise também possui diferentes <br>estados, sendo alguns deles:</p>
 						<ul class="fragment highlight">
 							<li>Pendente (Pending)</li>
@@ -1046,35 +1041,35 @@ getName(hello);
 						</ul>
 					</section>
 
-					<section>
-						<p>Os estados mais utilizados são: <br><span class="highlight">Resolvida</span> e <span class="highlight">Rejeitada</span>.</p>
+					<section data-menu-title="Resolved e Rejected">
+						<p>Os estados mais utilizados são: <br><span class="highlight">Resolved</span> e <span class="highlight">Rejected</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Pending">
 						<p>Ao criar uma Promise, seu estado <br>inicial é <span class="highlight">pending</span>. </p>
 					</section>
 
-					<section>
+					<section data-menu-title="Resolved">
 						<p>Se a mesma chegar ao estado <span class="highlight">resolved</span> é porque tudo deu certo, ou seja, a Promise foi criada, processada com sucesso.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Rejected">
 						<p>Porém, em caso de falhas ela  <br>entrará no modo <span class="highlight">rejected</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Then e catch">
 						<p>Uma das maneiras de fazer os <br>tratamentos de sucesso e falha é  <br>através dos métodos <span class="highlight">then</span> e <span class="highlight">catch</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Porque utilizar?">
 						<p>Porque utilizar Promises?</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Funções assíncronas">
 						<p>Quando utilizamos <span class="highlight">funções assíncronas</span>, <br>não conseguimos garantir o fluxo do nosso código, ou seja, um trecho de código que está localizado <span class="highlight">após</span> uma função assíncrona pode ser executado <span class="highlight">antes</span> da mesma ser realizada.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Exemplo I">
 						<pre>
 							<code>function getConfig() {
     var cf;
@@ -1100,7 +1095,7 @@ console.log(config);
 						</pre>
 					</section>
 
-					<section>
+					<section data-menu-title="Exemplo II">
 						<p>Esse código será executado assim <br>que nossa aplicação iniciar. A ordem de <br>execução será a seguinte:</p>
 						<ul class="highlight">
 							<li class="fragment">Abrindo o arquivo de configuração...</li>
@@ -1109,11 +1104,11 @@ console.log(config);
 						</ul>
 					</section>
 
-					<section>
+					<section data-menu-title="Porque undefined?">
 						<p>O config foi impresso como <span class="highlight">undefined</span>, pois foi avaliado antes mesmo do arquivo<br> ser aberto pela <span class="highlight">json.open</span>.</p>
 					</section>
 
-					<section>
+					<section data-menu-title="Resolvendo o problema">
 						<p>Podemos resolver este problema assim:</p>
 						<pre class="fragment">
 							<code>function getConfig() {
@@ -1133,7 +1128,7 @@ getConfig().then(function(config) {
 						</pre>
 					</section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função I">
                         <p>Faremos uma função que simula uma requisição, assim como nossa tool de json.</p>
                         <pre class="fragment">
                             <code>function efetuaBusca() {
@@ -1143,11 +1138,11 @@ getConfig().then(function(config) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função II">
                         <p>Agora podemos começar a criação de nossa Promise. Se Promise é um objeto e objetos em javascript podem ser criados ou instânciados através da palavra reservada <span class="highlight">new</span>, faremos o mesmo com nossa Promise.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função III">
                         <pre>
                             <code>function efetuaBusca() {
     new Promise();
@@ -1159,11 +1154,11 @@ efetuaBusca(); // => "TypeError: Promise resolver is not a function"
                         <p class="fragment">Porém, isso não será o suficiente para que funcione. O código acima resultará em <br><span class="highlight">TypeError: Promise resolver is not a function</span>.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função IV">
                         <p>Um detalhe importante é que na criação de uma Promise temos que passar como parâmetro uma função responsável pelo <span class="highlight">resolve</span> e <span class="highlight">reject</span>.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função V">
                         <pre>
                             <code>function efetuaBusca() {
     new Promise(function(resolve, reject) {
@@ -1176,11 +1171,11 @@ console.log(efetuaBusca()); // => undefined
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função VI">
                         <p>Pronto, não teremos mais o erro, porém temos <span class="highlight">undefined</span> como retorno. Isso acontece porque não especificamos o retorno da nossa função efetuaBusca(). Precisamos definir nossa promise como retorno da nossa função.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função VII">
                         <pre>
                             <code>function efetuaBusca() {
     return new Promise((resolve, reject) => {
@@ -1194,11 +1189,11 @@ console.log(efetuaBusca()); // => Promise {&lt;Pending&gt;}
                         <p class="fragment">Agora temos como retorno uma<br> Promise com estado <span class="highlight">pending</span>.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função VIII">
                         <p>Para resolver nossa Promise, podemos utilizar a função <span class="highlight">resolve</span> passando como parâmetro <br>um valor que será acessível através<br> de nossa Promise resolvida.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função IX">
                         <pre>
                             <code>function efetuaBusca() {
     new Promise(function(resolve, reject) {
@@ -1217,15 +1212,15 @@ efetuaBusca().then(function(resultado) {
                         </pre>
                     </section>
 				    
-                    <section>
+                    <section data-menu-title="Criando uma função X">
                         <p>Utilizamos um setTimeout para simular uma requisição que demoraria 5 segundo para retornar com a resposta. Quando passado os 5 segundos, <span class="highlight">resolve</span> será invocado passando como <span class="highlight">parâmetro o nosso objeto</span>, então <span class="highlight">then</span> é executado trazendo como parâmetro o nosso objeto esperado.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Criando uma função XI">
                         <p>Assim como fizemos para resolver a <br>nossa Promise, também podemos <br>rejeitar utilizando <span class="highlight">reject</span>.</p>
                     </section>
                     
-                    <section>
+                    <section data-menu-title="Criando uma função XII">
                         <pre>
                             <code>function efetuaBusca(foo) {
     new Promise(function(resolve, reject) {
@@ -1250,17 +1245,17 @@ efetuaBusca(true)
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Fim">
                         <b class="highlight">É isso, próximo!</b>
                     </section>
                 </section>
 
 
                 <section>
-                    <section>
+                    <section data-menu-title="Tipos">
                         <b class="highlight">Tipos</b>
                     </section>
-                    <section>
+                    <section data-menu-title="O que abordaremos?">
                         <p>O que abordaremos?</p>
                         <ul class="highlight">
                             <li class="fragment">Tipos primitivos e tipos de objetos</li>
@@ -1272,46 +1267,46 @@ efetuaBusca(true)
                             <li class="fragment">Null e undefined</li>
                         </ul>
                     </section>
-                    <section>
+                    <section data-menu-title="Tipos primitivos">
                         <p>Os tipos de JavaScript podem ser divididos em <span class="highlight">tipos primitivos</span> e <span class="highlight">tipos de objetos</span>.</p>
                     </section>
-                    <section>
+                    <section data-menu-title="Tipos com métodos">
                         <p>E podem ser divididos em <br><span class="highlight">tipos com métodos</span> e <span class="highlight">tipos sem métodos</span>.</p>
                     </section>
-                    <section>
+                    <section data-menu-title="Tipos mutáveis">
                         <p>Também podem ser classificados como <br><span class="highlight">tipos mutáveis</span> e <span class="highlight">imutáveis</span>.</p>
                     </section>
-                    <section>
+                    <section data-menu-title="Mutável">
                         <p>Um valor do tipo <span class="highlight">mutável <br> pode mudar</span>.</p>
                     </section>
-                    <section>
+                    <section data-menu-title="Objetos e arrays">
                         <p><span class="highlight">Objetos</span> e <span class="highlight">arrays</span> são <span class="highlight">mutáveis</span>.</p>
                         <p class="fragment">JavaScript pode mudar os valores de propriedades do objeto e de elementos de arrays.</p>
                     </section>
-                    <section>
+                    <section data-menu-title="Números, boolean...">
                         <p><span class="highlight">Números</span>, <span class="highlight">booleanos</span>, <span class="highlight">null</span> e <span class="highlight">undefined</span> <br> são <span class="highlight">imutáveis</span>. </p>
                     </section>
-                    <section>
+                    <section data-menu-title="Strings">
                         <p>As <span class="highlight">strings</span> podem ser consideradas arrays de caractéres, sendo que se poderia <br>esperar que fossem mutáveis.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="String são imutáveis">
                         <p>No entanto, em JavaScript as <span class="highlight">strings são imutáveis</span>.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Indíce de uma string">
                         <p>Você pode acessar o texto de determinado índice de uma string, mas JavaScript não fornece uma maneira de alterar o texto de uma string existente.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Booleano">
                         <p>Se você usa um valor não booleano onde é esperado um booleano, JavaScript <br> converte adequadamente.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Valores literais">
                         <p>As regras de conversão de valores literais de JavaScript afetam sua definição de igualdade, sendo que o operador de igualdade == <br>realiza a conversões de tipo. </p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exemplo">
                         <p>ou seja...</p>
                         <pre class="fragment">
                             <code>console.log(1 == '1'); // => true
@@ -1319,7 +1314,7 @@ console.log(1 === '1'); // => false</code>
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Tipos primitivos">
                         <p>Tipos Primitivos</p>
                         <ul class="fragment highlight">
                             <li>String</li>
@@ -1328,7 +1323,7 @@ console.log(1 === '1'); // => false</code>
                         </ul>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Tipos compostos">
                         <p>Tipos Compostos</p>
                         <ul class="fragment highlight">
                             <li>Object</li>
@@ -1336,34 +1331,34 @@ console.log(1 === '1'); // => false</code>
                         </ul>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Null e undefined">
                         <p>Valores especiais <span class="highlight">null</span> e <span class="highlight">undefined</span> são valores primitivos, porém são membros <br>de seu próprio tipo especial.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Objeto">
                         <p>Qualquer valor em javascript que não seja string, booleano, null ou undefined é um objeto.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Função">
                         <p>Javascript define um tipo especial de objeto conhecido como função. A função é um objeto que tem um código executável associado.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Fim">
                         <b class="highlight">É isso, próximo!</b>
                     </section>
                 </section>
 
 				<section>
 				    
-                    <section>
+                    <section data-menu-title="Boas práticas">
                         <b class="highlight">Boas práticas</b>
                     </section>
 
-                    <section>
+                    <section data-menu-title="O seu código">
                     	<p><i>Você já parou pra pensar <br>que "o seu" código não é seu?</i></p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exemplo">
                         <p>Pense no seguinte código:</p>
                         <pre class="fragment">
                             <code>function Carro(modelo, marca, ano) {
@@ -1379,15 +1374,15 @@ var fusca = new Carro("Fusca")
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Falta de padrão">
                         <p>Pode parecer besteira, mas a falta de padrão, faz você mesmo ficar em dúvida de como desenvolver.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Verifique o projeto">
                         <p>Verifique se o projeto que você está mexendo já não tem algo definido como padrão.</p>
                     </section>
                     
-                    <section>
+                    <section data-menu-title="Exemplo I">
                         <p>Vai utilizar o mesmo código várias vezes?</p>
                         <pre class="fragment">
                             <code>$('.elemento').addClass('red');
@@ -1398,7 +1393,7 @@ if($('.elemento').hasClass('red')) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exemplo II">
                         <p>Já pensou em reutilizar e otimizar?</p>
                         <pre class="fragment">
                             <code>var elemento = $('.elemento');
@@ -1412,7 +1407,7 @@ if(elemento.hasClass(cor)) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exemplo III">
                         <p>e assim?</p>
                         <pre class="fragment">
                             <code>if($('.elemento').hasClass('red')) {
@@ -1428,7 +1423,7 @@ if(elemento.hasClass(cor)) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Exemplo IV">
                         <p>poderia ser algo assim...</p>
                         <pre class="fragment">
                             <code>var elemento = $('.elemento');
@@ -1449,11 +1444,11 @@ elemento.addClass(classe);
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Facilidade manutenção">
                         <p>A facilidade em dar manutenção também é importante. Todos têm que conseguir mexer no seu código da maneira mais rápida e otimizada possível, sem precisar fazer gambiarras.</p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Hell">
                         <p>Você gostaria de ver uma situação dessas?</p>
                         <pre class="fragment">
                             <code>var x = 1; 
@@ -1477,17 +1472,17 @@ if(x) {
                         </pre>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Não se apegue">
                         <p>Se é difícil de ler, é difícil de dar manutenção.</p>
                         <p class="fragment highlight"><i>Não se apegue ao seu código!</i></p>
                     </section>
 
-                    <section>
+                    <section data-menu-title="Fim">
                         <b class="highlight">É isso, próximo!</b>
                     </section>
 				</section>
 
-				<section>
+				<section data-menu-title="Referências">
 					<p><b class="highlight">Referências</b></p>
                     <ul>
 					   <li><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
